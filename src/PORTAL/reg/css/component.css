@@ -1,0 +1,41 @@
+.social-icons {
+  overflow: auto;
+}
+
+.social-icons li {
+  list-style-type: none;
+  float: left;
+}
+.btn{
+  padding:5px 10px 6px;
+  font-size:12px;
+}
+.social-icons li a i {
+  
+  color: #fff;
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 25px;
+  font-weight:200;
+  text-align: center;
+  margin-left: 45px;
+  padding:10px;
+  display:block;
+}
+.social-icons li a:hover{
+  cursor:pointer;
+  text-decoration: none;
+}
+.fa-facebook {
+  background:#3B5998
+} 
+.fa-linkedin {
+  background:#007bb6
+}
+.fa-twitter {
+  background:#00aced
+}
+.fa-google-plus {
+  background:#dd4b39
+}

@@ -1,0 +1,24 @@
+body{
+  font-family: 'Slabo 27px', serif;
+}
+#status { padding:10px; background:#88C4FF; color:#000; font-weight:bold; font-size:12px; margin-bottom:10px; display:none; width:90%; }
+.navigbar{
+  width:100%;
+  color:white;
+  background:black;
+  height:5%;
+  position:fixed;
+}
+.navigbar li{
+  list-style:none;
+  display: inline-block;
+}
+.navigbar li a{
+  text-decoration: none;
+  color:white;
+  padding:2em 0.5em;
+  font-size:1.5em;
+}
+label{
+  font-size:1.4em;
+}

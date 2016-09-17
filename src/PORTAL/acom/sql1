@@ -1,0 +1,1 @@
+SELECT * FROM event_participants INNER JOIN users WHERE users.pearl_id=event_participants.pearl_id

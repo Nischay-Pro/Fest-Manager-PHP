@@ -1,0 +1,4 @@
+CREATE VIEW event_data AS
+SELECT event_id,pearl_id FROM event_participants INNER JOIN users WHERE users.pearl_id=event_participants.pearl_id
+UNION
+SELECT event_id,pearl_id FROM group_members INNER JOIN users WHERE users.pearl_id=group_members.pearl_id
