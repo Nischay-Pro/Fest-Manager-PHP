@@ -1,5 +1,5 @@
 <?php
-$con=mysqli_connect("localhost","root","","pearl_16");
+$con=mysqli_connect("localhost","root","060848","pearl_16");
 function getevents(){
 	$con=mysqli_connect("localhost","root","","pearl_16");
 $query=mysqli_query($con,"SELECT * FROM event_details NATURAL JOIN pearl_events");

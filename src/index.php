@@ -3,7 +3,7 @@
 if (isset($_POST['tag']) && $_POST['tag'] != ''){
     // get tag
     $tag = $_POST['tag'];
-    $con=mysqli_connect('localhost','root','','pearl_16');
+    $con=mysqli_connect('localhost','root','060848','pearl_16');
     // include db handler
     require_once 'include/DB_Functions.php';
     $db = new DB_Functions();

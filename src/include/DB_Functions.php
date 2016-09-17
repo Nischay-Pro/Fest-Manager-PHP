@@ -1,10 +1,11 @@
 <?php
-$con=mysqli_connect('localhost','root','','pearl_16');
+$con=mysqli_connect('localhost','root','060848','pearl_16');
 class DB_Functions {
     //put your code here
     // constructor
     function __construct() {
         require_once 'DB_Connect.php';
+        require_once 'DB_Config.php';
         // connecting to database
         
       $this->db = new DB_Connect();
@@ -16,7 +17,7 @@ class DB_Functions {
          
     }
     public function regUser($name,$email,$phone,$college,$code,$reg,$accom,$team_id){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
         $regUser=mysqli_query($con,"INSERT INTO users(name,email,phone,college,pearl_id,reg,accom,id_reg) VALUES('$name','$email','$phone','$college','$code','$reg','$accom','$team_id')");  
         if ($regUser) {
             // return user data
@@ -37,7 +38,7 @@ class DB_Functions {
     mysqli_close($con);
     }
     public function addUserToEvent($pearl_id,$event_id,$uploaded_by){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
         $time=Date('U');
         $addUser=mysqli_query($con,"INSERT INTO event_participants(event_id,pearl_id,uploaded_by,updated_at) VALUES('$event_id','$pearl_id','$uploaded_by','$time')");
         if ($addUser) {
@@ -62,7 +63,7 @@ class DB_Functions {
     mysqli_close($con);
     }
      public function checkDoshLogin($team_id,$password){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
         $checkUser=mysqli_query($con,"SELECT * FROM dosh_credentials WHERE team_id='$team_id' AND team_pass='$password'");
         $rows=mysqli_num_rows($checkUser);
         if ($rows) {
@@ -77,7 +78,7 @@ class DB_Functions {
     mysqli_close($con);
     }
     public function getIndiEventData($event_id,$updated_at){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
         $addUser=mysqli_query($con,"SELECT * FROM event_participants NATURAL JOIN users WHERE CAST(updated_at AS UNSIGNED) > $updated_at");
         if ($addUser) {
             // return user data
@@ -102,7 +103,7 @@ class DB_Functions {
     }
 
     public function getGroupEventData($event_id,$updated_at){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
         $getGroupDetails=mysqli_query($con,"SELECT * FROM  group_details WHERE CAST(updated_at AS UNSIGNED) >$updated_at AND event_id='$event_id'");
         
 
@@ -141,7 +142,7 @@ class DB_Functions {
     mysqli_close($con);
     }
     public function checkEventAdmin($Bits_ID,$password){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
         $checkEventAdmin=mysqli_query($con,"SELECT * FROM event_credentials WHERE Bits_ID='$Bits_ID' AND password='$password'");
         $rows=mysqli_num_rows($checkEventAdmin);
         if ($rows) {
@@ -163,7 +164,7 @@ class DB_Functions {
     mysqli_close($con);
     }
      public function getEvents(){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
         $getEvents=mysqli_query($con,"SELECT * FROM pearl_events");
         if ($getEvents) {
             // return user data
@@ -186,7 +187,7 @@ class DB_Functions {
     mysqli_close($con);
     }
     public function getSchedule($updated_at){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
         $getEvents=mysqli_query($con,"SELECT * FROM event_details NATURAL JOIN pearl_events WHERE CAST(updated_at AS UNSIGNED) > $updated_at");
         if ($getEvents) {
             // return user data
@@ -210,7 +211,7 @@ class DB_Functions {
     }
     
     public function addUserToGroup($pearl_id,$group_id,$event_id){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
 
         $addUser=mysqli_query($con,"INSERT INTO group_members(group_id,pearl_id,event_id) VALUES('$group_id','$pearl_id','$event_id')");
         if ($addUser) {
@@ -233,7 +234,7 @@ class DB_Functions {
     mysqli_close($con);
     }
     public function updateParticipantRound($pearl_id,$event_id,$round_id){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
 
         $addUser=mysqli_query($con,"UPDATE event_participants SET round_at='$round_id' WHERE event_id='$event_id' AND pearl_id='$pearl_id'");
         if ($addUser) {
@@ -248,7 +249,7 @@ class DB_Functions {
     mysqli_close($con);
     }
     public function updateGroupRound($round_id,$group_id,$event_id){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
         $time=Date('U');
         $addUser=mysqli_query($con,"UPDATE group_details SET round_at='$round_id',updated_at='$time' WHERE event_id='$event_id' AND group_id='$group_id'");
         if ($addUser) {
@@ -265,14 +266,14 @@ class DB_Functions {
     mysqli_close($con);
     }
     public function getGroupId(){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
         $getGroupId=mysqli_query($con,"SELECT DISTINCT group_id FROM group_details");
         $result=mysqli_num_rows($getGroupId);
         $group_id=$result+1;
         return $group_id;
     }
     public function addGroupDetails($group_id,$group_name,$event_id,$uploaded_by,$round_id){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
         $time=Date('U');
         $addGroupDetails=mysqli_query($con,"INSERT INTO group_details(group_id,group_name,event_id,uploaded_by,round_at,updated_at) VALUES('$group_id','$group_name','$event_id','$uploaded_by','$round_id','$time')");
         if($addGroupDetails){
@@ -289,7 +290,7 @@ class DB_Functions {
     }
     
     public function addToEvent(){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
         $addGroup=mysqli_query($con,"INSERT INTO events(event_id,user_id) VALUES('$event_id','$group_id')");
         if($addGroup){
             return true;
@@ -300,7 +301,7 @@ class DB_Functions {
         
     }
 public function gcmCall($event_id,$message,$arraynew,$count) {
-    $con=mysqli_connect('localhost','root','','pearl_16'); 
+    $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16'); 
      include_once 'GCMPushMessage.php';
     $apikey="AIzaSyC07vqOwJVrQ8f763cwtIFU3Pjw45m1um4";
     $gcm = new GCMPushMessage($apikey);
@@ -323,7 +324,7 @@ mysqli_close( $con);
     }
 
 public function addToken($token){
-$con=mysqli_connect('localhost','root','','pearl_16');
+$con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
     $query=mysqli_query($con,"SELECT * FROM user_token WHERE token='$token'");
     $rows=mysqli_num_rows($query);
     if($rows==0){
@@ -342,7 +343,7 @@ $con=mysqli_connect('localhost','root','','pearl_16');
     mysql_close( $con);
 }
 public function getFeed($updated_at){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
         $getFeed=mysqli_query($con,"SELECT * FROM notifications  WHERE CAST(updated_at AS UNSIGNED) > $updated_at");
         if ($getFeed) {
             // return user data
@@ -364,7 +365,7 @@ public function getFeed($updated_at){
     mysqli_close($con);
     }
     public function updateNotification($message,$event_id){
-        $con=mysqli_connect('localhost','root','','pearl_16');
+        $con=mysqli_connect('localhost','root',DB_PASSWORD,'pearl_16');
         $time=Date('U');
         $addNotification=mysqli_query($con,"INSERT INTO notifications(event_id,message,updated_at) VALUES('$event_id','$message','$time')");
         if ($addNotification) {
