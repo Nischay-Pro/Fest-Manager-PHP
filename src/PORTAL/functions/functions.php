@@ -1,7 +1,7 @@
 <?php
 $con=mysqli_connect("localhost","root","060848","pearl_16");
 function getevents(){
-	$con=mysqli_connect("localhost","root","","pearl_16");
+	$con=mysqli_connect("localhost","root","060848","pearl_16");
 $query=mysqli_query($con,"SELECT * FROM event_details NATURAL JOIN pearl_events");
 $i=1;
 while($result=mysqli_fetch_array($query)){
@@ -24,8 +24,7 @@ while($result=mysqli_fetch_array($query)){
 	}
 }
 function getIndiEvents(){
-	$con=mysqli_connect("localhost","root","","pearl_16");
-	$con=mysqli_connect("localhost","root","","pearl_16");
+	$con=mysqli_connect("localhost","root","060848","pearl_16");
 $query=mysqli_query($con,"SELECT * FROM pearl_events");
 $i=1;
 while($result=mysqli_fetch_array($query)){
@@ -40,7 +39,7 @@ while($result=mysqli_fetch_array($query)){
 	}
 }
 function getEventdropdown(){
-	$con=mysqli_connect("localhost","root","","pearl_16");
+	$con=mysqli_connect("localhost","root","060848","pearl_16");
 $query=mysqli_query($con,"SELECT * FROM pearl_events ORDER BY event_name ASC");
 $i=1;
   echo '<div class="form-group">
@@ -48,12 +47,12 @@ $i=1;
   while($result=mysqli_fetch_array($query)){
     $name=$result['event_name'];
     $event_id=$result['event_id'];
-    echo '<option  id="'.$event_id.'" value="'.$event_id.'">'.$name.'</option>';
+    echo '<option id="'.$event_id.'" value="'.$event_id.'">'.$name.'</option>';
   }
  echo '</select></div>';
 }
 function getIndiParticipants(){
-	$con=mysqli_connect("localhost","root","","pearl_16");
+	$con=mysqli_connect("localhost","root","060848","pearl_16");
 $query=mysqli_query($con,"SELECT * FROM users AS u,event_participants AS e,pearl_events AS p WHERE u.pearl_id=e.pearl_id AND e.event_id=p.event_id");
 $i=1;
   
@@ -72,7 +71,7 @@ $i=1;
     		$i++;
   }
 }function getGroupParticipants(){
-	$con=mysqli_connect("localhost","root","","pearl_16");
+	$con=mysqli_connect("localhost","root","060848","pearl_16");
 $query=mysqli_query($con,"SELECT * FROM users AS u,group_members AS gm,pearl_events AS p,group_details AS gd WHERE u.pearl_id=gm.pearl_id AND gm.event_id=p.event_id");
 $i=1;
   
@@ -92,7 +91,7 @@ $i=1;
   }
 }
 function getReport(){
-  $con=mysqli_connect("localhost","root","","pearl_16");
+  $con=mysqli_connect("localhost","root","060848","pearl_16");
   $query="Select Pearl_Id,Name,phone,email,DATE_FORMAT(EndDate,'%D %M') as 'RefundDate' from accomodation Natural Join users where dayofyear(curdate())>=dayofyear(enddate) and refund=0";
 $result=mysqli_query($con,$query);
   while($row=mysqli_fetch_assoc($result))
