@@ -33,15 +33,14 @@ while($result=mysqli_fetch_array($query)){
 		$id=$result['id'];
 		$Event_name=$result['name'];
 		$Event_date=$result['time'];
-		$Event_date= date('d-m-Y H:i:s', $Event_date);
         $Event_cost=$result['cost'];
 		$Event_venue=$result['room'];
 		echo "<tr>
 				<td>$i</td>
 				<td ' id='EventName:$id'>$Event_name</td>
-				<td contenteditable='true' id='Event_date:$id'>$Event_date</td>
-				<td contenteditable='true' id='Event_venue:$id'>$Event_venue</td>
-                <td contenteditable='true' id='Event_cost:$id'>$Event_cost</td>
+				<td contenteditable='false' id='datetimepicker'>$Event_date</td>
+				<td contenteditable='false' id='Event_venue:$id'>$Event_venue</td>
+                <td contenteditable='false' id='Event_cost:$id'>$Event_cost</td>
 				</tr>";
 				$i++;
 		

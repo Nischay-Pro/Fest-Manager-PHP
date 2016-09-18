@@ -71,10 +71,10 @@ $(document).ready(function(){
 <thead>
       <tr>
       <th>Sr No</th>
-        <th>Event Name</th>
-        <th>Event Round</th>
-        <th>Event Date</th>
-        <th>Event Venue</th>
+        <th>Workshop Name</th>
+        <th>Workshop Time</th>
+        <th>Workshop Room</th>
+        <th>Workshop Cost</th>
       </tr>
     </thead>
      <tbody>
