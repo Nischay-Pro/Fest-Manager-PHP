@@ -55,8 +55,8 @@ $(document).ready(function(){
 <body>
 <nav>
  <ul class="navigbar">
-  <li><a href="addworkshop.php">Configure Workshop</a></li>
-  <li><a href="workshopusers.php">Workpoop</a></li>
+  <li><a href="addworkshop.php">Add Workshop</a></li>
+  <li><a href="workshopusers.php">Add User To Workshop</a></li>
   <li><a href="#">Team</a></li>
   <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
@@ -78,7 +78,7 @@ $(document).ready(function(){
       </tr>
     </thead>
      <tbody>
-  	<?php getevents();
+  	<?php getworkshops();
   	?>
   </tbody>
 </table>

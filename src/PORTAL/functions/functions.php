@@ -1,4 +1,5 @@
 <?php
+session_start();
 $con=mysqli_connect("localhost","root","060848","pearl_16");
 function getevents(){
 	$con=mysqli_connect("localhost","root","060848","pearl_16");
@@ -23,6 +24,31 @@ while($result=mysqli_fetch_array($query)){
 		
 	}
 }
+function getWorkshops(){
+	$con=mysqli_connect("localhost","root","060848","pearl_16");
+    $club = $_SESSION['controlz_id'];
+$query=mysqli_query($con,"SELECT * FROM event_workshops WHERE `club`='$club' AND isdelete='0'");
+$i=1;
+while($result=mysqli_fetch_array($query)){
+		$id=$result['id'];
+		$Event_name=$result['name'];
+		$Event_date=$result['time'];
+		$Event_date= date('d-m-Y H:i:s', $Event_date);
+        $Event_cost=$result['cost'];
+		$Event_venue=$result['room'];
+		echo "<tr>
+				<td>$i</td>
+				<td ' id='EventName:$id'>$Event_name</td>
+				<td contenteditable='true' id='Event_date:$id'>$Event_date</td>
+				<td contenteditable='true' id='Event_venue:$id'>$Event_venue</td>
+                <td contenteditable='true' id='Event_cost:$id'>$Event_cost</td>
+				</tr>";
+				$i++;
+		
+	}
+
+                          }
+                        
 function getIndiEvents(){
 	$con=mysqli_connect("localhost","root","060848","pearl_16");
 $query=mysqli_query($con,"SELECT * FROM pearl_events");

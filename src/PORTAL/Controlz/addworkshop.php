@@ -34,41 +34,41 @@ else{
   <li><a href="#">Team</a></li>
   <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
- </ul>
 </nav>
 <div class="container" style="width:50%">
 <div class="space"></div>
-<form class="form-horizontal" action="addevent.php" role="form" method="POST">
+<form class="form-horizontal" action="workshopcall.php" role="form" method="GET">
+                  <input type="hidden" name="action" value="registerEvent">
                   <div class="form-group">
                     <label  class="col-sm-2 control-label"
-                              for="sel1">Workshop Name</label>
+                              for="name">Workshop Name</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
-                            id="Roundname" name="Roundname" placeholder="Event ROund"/>
+                            id="name" name="name" placeholder="Workshop Name"/>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label"
-                          for="Roundname" >Workshop Round</label>
+                          for="room" >Room Number</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
-                            id="Roundname" name="Roundname" placeholder="Event ROund"/>
+                            id="room" name="room" placeholder="Room Number"/>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label"
-                          for="Event_venue" >Venue</label>
+                          for="cost" >Workshop Cost</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
-                            id="Event_venue" name="Event_venue" placeholder="venue"/>
+                            id="cost" name="cost" placeholder="Cost"/>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label"
-                          for="Event_date" >Workshop Time</label>
+                          for="time" >Workshop Time</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
-                            id="datetimepicker" name="Event_date" placeholder="Event Time"/>
+                            id="datetimepicker" name="time" placeholder="Workshop Time"/>
                     </div>
                   </div>
                                    

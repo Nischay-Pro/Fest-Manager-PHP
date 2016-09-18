@@ -58,7 +58,9 @@ $(document).ready(function(){
   <li><a href="addevent.php">Add Event</a></li>
   <li><a href="send_notification.php">Send Notification</a></li>
   <li><a href="participants.php">Participants</a></li>
+    <li><a href="workshop.php">Workshops</a></li>
   <li><a href="#">Team</a></li>
+
   <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
  </ul>

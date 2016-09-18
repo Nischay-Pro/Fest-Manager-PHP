@@ -52,7 +52,7 @@ if(isset($_POST['login']))
 {
     $controlz_id=mysqli_real_escape_string($con,$_POST['controlz_id']);
     $controlz_pass=mysqli_real_escape_string($con,$_POST['controlz_pass']);
-    $check_user=mysqli_query($con,"SELECT * FROM  controlz_credentials WHERE controlz_id='$controlz_id'AND controlz_pass='$controlz_pass'");
+    $check_user=mysqli_query($con,"SELECT * FROM  event_credentials WHERE organiser_id='$controlz_id'AND password='$controlz_pass'");
     $rows=mysqli_num_rows($check_user);
     if($rows)
     {
