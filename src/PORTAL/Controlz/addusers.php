@@ -31,6 +31,7 @@ else{
  <ul class="navigbar">
  <li><a href="index.php">Controlz Panel :P</a></li>
   <li><a href="workshop.php">Back to Workshop Dashboard</a></li>
+  <li><a href="users.php">See Registered Users</a></li>
   <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
  </ul>

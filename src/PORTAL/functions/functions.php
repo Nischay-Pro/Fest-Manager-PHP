@@ -78,6 +78,38 @@ $i=1;
   }
  echo '</select></div>';
 }
+function getUsers(){
+	$con=mysqli_connect("localhost","root","060848","pearl_16");
+    $club = $_SESSION['controlz_id'];
+$query=mysqli_query($con,"SELECT userid,event_workshops.name,event_workshops_participants.id,event_workshops_participants.is_coupon FROM event_workshops_participants,event_workshops WHERE `isdelete`='0' AND event_workshops.id = event_workshops_participants.eventid AND event_workshops.club = '$club' AND event_workshops.isdelete=0 AND event_workshops_participants.is_delete=0");
+$i=1;
+  echo '<div class="form-group">
+  <select class="form-control" id="sel1" name="workshopid">';
+while($result=mysqli_fetch_array($query)){
+		$id=$result['id'];
+		$Event_userid=$result['userid'];
+		$Event_name=$result['name'];
+        $Event_coupon=$result['is_coupon'];
+    if($Event_coupon=='1'){
+        $Event_coupon='Applied Coupon';
+    }
+    else{
+        $Event_coupon='Coupon Not Applied';
+    }
+		echo "<tr onclick=\"editMe(this)\" id=\"$id\">
+				<td>$i</td>
+        <td contenteditable='false' id='EventUserId:$Event_userid'>$Event_userid</td>
+				<td ' id='EventName:$id'>$Event_name</td>
+				<td contenteditable='false' id='Event_coupon:$id'>$Event_coupon</td>
+                
+				</tr>";
+
+        //<td class='danger' contenteditable='false' onclick='editMe(this)'' id='$id'>DELETE</td>
+				$i++;
+		
+	}
+ echo '</select></div>';
+}
 function getEventDropdown(){
 	$con=mysqli_connect("localhost","root","060848","pearl_16");
 $query=mysqli_query($con,"SELECT * FROM pearl_events ORDER BY event_name ASC");
