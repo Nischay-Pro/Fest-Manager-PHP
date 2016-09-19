@@ -53,21 +53,22 @@ else{
     // "INSERT INTO event_workshops_participants(`userid`,`eventid`,`is_coupon`) VALUES('$userid','$eventid','$iscoupon')";
 $run=mysqli_query($con,"INSERT INTO event_workshops_participants(`userid`,`eventid`,`is_coupon`) VALUES('$userid','$eventid','$iscoupon')");
   if($run){
-      $loadevent=mysqli_query($con,"SELECT * FROM event_workshops WHERE club='$club' AND isdelete='0'");
-      $cost = '';
-    while ($row = mysqli_fetch_row($loadevent)) {
-        $cost = $loadevent['cost'];
-    }
-        echo $cost;
+      $loadevent=mysqli_query($con,"SELECT * FROM event_workshops WHERE club='$club' AND isdelete='0' AND id='$eventid'");
+      $cost = mysqli_fetch_array($loadevent);
+      //while ($row = mysqli_fetch_row($loadevent)) {
+      //  $cost = $row['cost'];
+    //}
       if($iscoupon=='1'){
-      $sql = "UPDATE event_credentials SET collection=collection+$cost,coupons=coupons+1 WHERE organiser_id='$club'";
+      $sql = "UPDATE event_credentials SET collection=collection+$cost[4],coupons=coupons+1 WHERE organiser_id='$club'";
+           echo $sql;
           $con->query($sql);
       }
       else{
-      $sql = "UPDATE event_credentials SET collection=collection+$cost WHERE organiser_id='$club'";
+      $sql = "UPDATE event_credentials SET collection=collection+$cost[4] WHERE organiser_id='$club'";
         $con->query($sql);
       }
-    echo '{"message" : "success"}';
+    //echo '{"message" : "success"}';
+      echo "<script>window.open('addusers.php','_self')</script>";
   } else {
     echo '{"message" : "failure"}';
 }

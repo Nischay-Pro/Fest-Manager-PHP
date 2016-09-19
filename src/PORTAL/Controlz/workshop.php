@@ -81,7 +81,7 @@ function editMe(row){
 <nav>
  <ul class="navigbar">
   <li><a href="addworkshop.php">Add Workshop</a></li>
-  <li><a href="workshopusers.php">Add User To Workshop</a></li>
+  <li><a href="addusers.php">Add Users</a></li>
   <li><a href="#">Team</a></li>
   <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>

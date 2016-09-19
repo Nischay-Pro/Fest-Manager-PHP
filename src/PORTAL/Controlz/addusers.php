@@ -40,7 +40,8 @@ else{
 </nav>
 <div class="container" style="width:50%">
 <div class="space"></div>
-<form class="form-horizontal" action="addevent.php" role="form" method="POST">
+<form class="form-horizontal" action="workshopcall.php" role="form" method="GET">
+              <input type="hidden" name="action" value="registerUser">
               <input type="hidden" name="iscoupon" id="coupon-hidden" value="0">
                   <div class="form-group">
                     <label  class="col-sm-2 control-label"
@@ -61,7 +62,7 @@ else{
                     <input class="col-sm-2 btn btn-lg btn-success" onclick="checkCoupon()" value="Coupon?" name="register" >
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
-                            id="coupon" placeholder="Click Left Button"/>
+                            id="coupon" placeholder="Coupon Not Applied (default)."/>
                     </div>
                   </div>
                                    
@@ -93,7 +94,7 @@ function checkCoupon(){
       if(dat.message){
         swal({
           title: 'Add Coupon?',
-          text: 'Do you wish to s. Sure?',
+          text: 'Only one coupon, mofo. Use wisely.',
           type: 'info',
           showCancelButton: true,
           closeOnConfirm: true,
