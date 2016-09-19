@@ -21,7 +21,8 @@ else
     echo $test;
 $run=mysqli_query($con,"INSERT INTO event_workshops(`name`,`room`,`time`,`cost`,`club`) VALUES('$name','$room','$time','$cost','$club')");
   if($run){
-    echo '{"message" : "success"}'; 
+    //echo '{"message" : "success"}'; 
+    echo "<script>window.open('workshop.php','_self')</script>";
   }
   else{
     echo '{"message" : "failure"}';
@@ -29,10 +30,11 @@ $run=mysqli_query($con,"INSERT INTO event_workshops(`name`,`room`,`time`,`cost`,
 }
 elseif($_GET['action']=='deleteEvent'){
 $name = mysqli_real_escape_string($con,$_GET['name']);
-$club = mysqli_real_escape_string($con,$_GET['club']);
+$club = $_SESSION['controlz_id'];
 $sql = "UPDATE event_workshops SET isdelete='1' WHERE name='$name' AND club='$club'";
 if ($con->query($sql) === TRUE) {
-    echo '{"message" : "success"}';
+    //echo '{"message" : "success"}';
+  echo "<script>window.open('workshop.php','_self')</script>";
 } else {
     echo '{"message" : "failure"}';
 }
@@ -41,6 +43,7 @@ elseif($_GET['action']=='registerUser'){
 $userid = mysqli_real_escape_string($con,$_GET['userid']);
 $eventid = mysqli_real_escape_string($con,$_GET['eventid']);
 $iscoupon = mysqli_real_escape_string($con,$_GET['iscoupon']);
+$club = $_SESSION['controlz_id'];
 $check_user=mysqli_query($con,"SELECT * FROM event_workshops_participants WHERE eventid='$eventid' AND is_delete='0' AND userid='$userid'");
 $rows=mysqli_num_rows($check_user);
 if($rows>0){

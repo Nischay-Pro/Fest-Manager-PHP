@@ -19,13 +19,20 @@ else{
     <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 <link type="text/css" rel="stylesheet" href="../bootstrap-3.2.0-dist/css/bootstrap.css">
 <link type="text/css" rel="stylesheet" href="css/style.css">
+<link type="text/css" rel="stylesheet" href="../../css/sweetalert.css">
+<script type="text/javascript" src="../../js/sweetalert.min.js"></script>
 <script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="../bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 <style type="text/css">
  .space{
     width:100%;
     height: 50px;
-  }</style>
+  }
+  .danger{
+    background: red;
+  }
+
+  </style>
 <script>
 $(document).ready(function(){
 	
@@ -48,6 +55,24 @@ $(document).ready(function(){
 });
 	
 });
+
+function editMe(row){
+  swal({
+  title: 'Delete this workshop?',
+  text: 'Let the people live. Say yas.',
+  type: 'warning',
+  showCancelButton: true,
+  closeOnConfirm: true,
+  disableButtonsOnConfirm: true,
+  confirmLoadingButtonColor: '#DD6B55'
+}, function(isConfirm){
+  if(isConfirm){
+    var val = document.getElementById('EventName:'+row.id).innerHTML;
+    document.getElementById('my-fucking-name').value=val;
+    document.getElementById('my-fucking-form').submit();
+  }
+});
+}
 
 </script>
 
@@ -83,8 +108,15 @@ $(document).ready(function(){
   </tbody>
 </table>
 
+
+
 </div>
 </div>
+
+<form class="form-horizontal" action="workshopcall.php" role="form" method="GET" id="my-fucking-form">
+    <input type="hidden" name="action" value="deleteEvent"/>
+    <input type="hidden" name="name" value="" id="my-fucking-name"/>
+</form>
 
 </body>
 </html>

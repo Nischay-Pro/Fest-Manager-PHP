@@ -5,7 +5,10 @@ if(!isset($_SESSION['controlz_id'])){
   echo "<script>window.open('login.php','_self')</script>";
 }
 else{
-  // start controlz work here
+  $name = mysqli_real_escape_string($con,$_GET['name']);
+  $room = mysqli_real_escape_string($con,$_GET['room']);
+  $time = mysqli_real_escape_string($con,$_GET['time']);
+  $cost = mysqli_real_escape_string($con,$_GET['cost']);
 }
 ?>
 <html>
@@ -46,7 +49,7 @@ else{
                               for="name">Workshop Name</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
-                            id="name" name="name" placeholder="Workshop Name"/>
+                            id="name" name="name" placeholder="Workshop Name" value=<?php echo"'$name'" ?>/>
                     </div>
                   </div>
                   <div class="form-group">
@@ -54,7 +57,7 @@ else{
                           for="room" >Room Number</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
-                            id="room" name="room" placeholder="Room Number"/>
+                            id="room" name="room" placeholder="Room Number" value=<?php echo"'$room'" ?>/>
                     </div>
                   </div>
                   <div class="form-group">
@@ -62,7 +65,7 @@ else{
                           for="cost" >Workshop Cost</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
-                            id="cost" name="cost" placeholder="Cost"/>
+                            id="cost" name="cost" placeholder="Cost" value=<?php echo"'$cost" ?>/>
                     </div>
                   </div>
                   <div class="form-group">
@@ -70,7 +73,7 @@ else{
                           for="time" >Workshop Time</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
-                            id="datetimepicker" name="time" placeholder="Workshop Time"/>
+                            id="datetimepicker" name="time" placeholder="Workshop Time" value=<?php echo"'$cost" ?>/>
                     </div>
                   </div>
                                    

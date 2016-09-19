@@ -35,12 +35,13 @@ while($result=mysqli_fetch_array($query)){
 		$Event_date=$result['time'];
         $Event_cost=$result['cost'];
 		$Event_venue=$result['room'];
-		echo "<tr>
+		echo "<tr onclick=\"editMe(this)\" id=\"$id\">
 				<td>$i</td>
 				<td ' id='EventName:$id'>$Event_name</td>
 				<td contenteditable='false' id='datetimepicker'>$Event_date</td>
 				<td contenteditable='false' id='Event_venue:$id'>$Event_venue</td>
-                <td contenteditable='false' id='Event_cost:$id'>$Event_cost</td>
+        <td contenteditable='false' id='Event_cost:$id'>$Event_cost</td>
+        <td contenteditable='false' onclick='editMe(this)'' id='$id'>DELETE</td>
 				</tr>";
 				$i++;
 		
