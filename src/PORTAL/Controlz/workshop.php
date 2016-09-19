@@ -29,7 +29,7 @@ else{
     height: 50px;
   }
   .danger{
-    background: red;
+    background: red !important;
   }
 
   </style>

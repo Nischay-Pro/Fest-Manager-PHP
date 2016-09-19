@@ -41,13 +41,13 @@ while($result=mysqli_fetch_array($query)){
 				<td contenteditable='false' id='datetimepicker'>$Event_date</td>
 				<td contenteditable='false' id='Event_venue:$id'>$Event_venue</td>
         <td contenteditable='false' id='Event_cost:$id'>$Event_cost</td>
-        <td contenteditable='false' onclick='editMe(this)'' id='$id'>DELETE</td>
+        <td class='danger' contenteditable='false' onclick='editMe(this)'' id='$id'>DELETE</td>
 				</tr>";
 				$i++;
 		
 	}
 
-                          }
+}
                         
 function getIndiEvents(){
 	$con=mysqli_connect("localhost","root","060848","pearl_16");
@@ -64,7 +64,21 @@ while($result=mysqli_fetch_array($query)){
 		
 	}
 }
-function getEventdropdown(){
+function getWorkshopDropdown(){
+	$con=mysqli_connect("localhost","root","060848","pearl_16");
+    $club = $_SESSION['controlz_id'];
+$query=mysqli_query($con,"SELECT * FROM event_workshops WHERE `isdelete`='0' AND `club` = '$club'");
+$i=1;
+  echo '<div class="form-group">
+  <select class="form-control" id="sel1" name="workshopid">';
+  while($result=mysqli_fetch_array($query)){
+    $name=$result['name'];
+    $event_id=$result['id'];
+    echo '<option id="'.$event_id.'" value="'.$event_id.'">'.$name.'</option>';
+  }
+ echo '</select></div>';
+}
+function getEventDropdown(){
 	$con=mysqli_connect("localhost","root","060848","pearl_16");
 $query=mysqli_query($con,"SELECT * FROM pearl_events ORDER BY event_name ASC");
 $i=1;

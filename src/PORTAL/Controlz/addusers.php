@@ -14,8 +14,8 @@ else{
 <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 <link type="text/css" rel="stylesheet" href="../bootstrap-3.2.0-dist/css/bootstrap.css">
 <link type="text/css" rel="stylesheet" href="../../css/sweetalert.css">
-<script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="../../js/sweetalert.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="../bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 <link type="text/css" rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,84 +36,92 @@ else{
   <li><a href="#">Team</a></li>
   <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
+ </ul>
 </nav>
 <div class="container" style="width:50%">
 <div class="space"></div>
-<form class="form-horizontal" action="workshopcall.php" role="form" method="GET" id="my-fucking-form">
-                  <input type="hidden" name="action" value="registerEvent">
+<form class="form-horizontal" action="addevent.php" role="form" method="POST">
+              <input type="hidden" name="iscoupon" id="coupon-hidden" value="0">
                   <div class="form-group">
                     <label  class="col-sm-2 control-label"
-                              for="name">Workshop Name</label>
+                              for="sel1">Workshop Name</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control"
-                            id="name" name="name" placeholder="Workshop Name"/>
+                        <?php getWorkshopDropdown(); ?>
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label"
-                          for="room" >Room Number</label>
+                          for="Roundname" >Participant ID</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
-                            id="room" name="room" placeholder="Room Number"/>
+                            id="part-id" name="userid" placeholder="Enter Participant ID"/>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 control-label"
-                          for="cost" >Workshop Cost</label>
+                    <input class="col-sm-2 btn btn-lg btn-success" onclick="checkCoupon()" value="Coupon?" name="register" >
                     <div class="col-sm-10">
                         <input type="text" class="form-control"
-                            id="cost" name="cost" placeholder="Cost"/>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <label class="col-sm-2 control-label"
-                          for="time" >Workshop Time</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control"
-                            id="datetimepicker" name="time" placeholder="Workshop Time"/>
+                            id="coupon" placeholder="Click Left Button"/>
                     </div>
                   </div>
                                    
       </div>
       
-        <input class="btn btn-lg btn-success" type="button" value="Add Event" name="register" onclick="confirmDiag()">
+        <input class="btn btn-lg btn-success" type="submit" value="Add Event" name="register" >
       </div>
       </form>
       </div>
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#datetimepicker').click(function(){
-	$(this).datetimepicker({
-  lang:'en',
-		minDate:0,
-		maxDate:'17.10.2016',
-		formatDate:'d.m.Y',
-		allowTimes:[
-  '09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00'
-  ]
-});
-});
-	});
-
-var confirmDiag = function(){
-  swal({
-    title: 'Add Workshop?',
-    text: 'Do you wish to s. Sure?',
-    type: 'info',
-    showCancelButton: true,
-    closeOnConfirm: true,
-    disableButtonsOnConfirm: true,
-    confirmLoadingButtonColor: '#DD6B55'
-  }, function(isConfirm){
-    if(isConfirm){
-      document.getElementById('my-fucking-form').submit();
-    }
+  $('#datetimepicker').click(function(){
+    $(this).datetimepicker({
+      lang:'en',
+      minDate:0,
+      maxDate:'15.10.2016',
+      formatDate:'d.m.Y',
+      allowTimes:['09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00']
+    });
   });
+});
+
+function checkCoupon(){
+  var user = document.getElementById('part-id').value;
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var dat = JSON.parse(this.responseText);
+      if(dat.message){
+        swal({
+          title: 'Add Coupon?',
+          text: 'Do you wish to s. Sure?',
+          type: 'info',
+          showCancelButton: true,
+          closeOnConfirm: true,
+          disableButtonsOnConfirm: true,
+          confirmLoadingButtonColor: '#DD6B55'
+        }, function(isConfirm){
+          if(isConfirm){
+            document.getElementById('coupon').value="Coupon Applied.";
+            document.getElementById('coupon-hidden').value=1;
+          }
+          else{
+            document.getElementById('coupon').value="Coupon Not Applied.";
+            document.getElementById('coupon-hidden').value=0;
+          }
+        });
+      }
+      else{
+          document.getElementById('coupon').value="Coupon Not Available.";
+          document.getElementById('coupon-hidden').value=0;
+      }
+    }
+  };
+  request.open("GET", "workshopcall.php/?action=checkCouponUser&userid="+user, true);
+  request.send();
 }
 
 </script>
 <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
-<script src="js/jquery.js"></script>
 <script src="js/jquery.datetimepicker.js"></script>
       
 <?php

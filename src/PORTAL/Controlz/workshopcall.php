@@ -41,7 +41,7 @@ if ($con->query($sql) === TRUE) {
 }
 elseif($_GET['action']=='registerUser'){
 $userid = mysqli_real_escape_string($con,$_GET['userid']);
-$eventid = mysqli_real_escape_string($con,$_GET['eventid']);
+$eventid = mysqli_real_escape_string($con,$_GET['workshopid']);
 $iscoupon = mysqli_real_escape_string($con,$_GET['iscoupon']);
 $club = $_SESSION['controlz_id'];
 $check_user=mysqli_query($con,"SELECT * FROM event_workshops_participants WHERE eventid='$eventid' AND is_delete='0' AND userid='$userid'");
@@ -50,10 +50,25 @@ if($rows>0){
     	echo '{"message" : "exists"}';
 }
 else{
-$run=mysqli_query($con,"INSERT INTO event_workshops_participants(`userid`,`eventid`,`is_coupon`) VALUES($userid','$eventid','$iscoupon')");
+    // "INSERT INTO event_workshops_participants(`userid`,`eventid`,`is_coupon`) VALUES('$userid','$eventid','$iscoupon')";
+$run=mysqli_query($con,"INSERT INTO event_workshops_participants(`userid`,`eventid`,`is_coupon`) VALUES('$userid','$eventid','$iscoupon')");
   if($run){
-	echo '{"message" : "success"}';
-} else {
+      $loadevent=mysqli_query($con,"SELECT * FROM event_workshops WHERE club='$club' AND isdelete='0'");
+      $cost = '';
+    while ($row = mysqli_fetch_row($loadevent)) {
+        $cost = $loadevent['cost'];
+    }
+        echo $cost;
+      if($iscoupon=='1'){
+      $sql = "UPDATE event_credentials SET collection=collection+$cost,coupons=coupons+1 WHERE organiser_id='$club'";
+          $con->query($sql);
+      }
+      else{
+      $sql = "UPDATE event_credentials SET collection=collection+$cost WHERE organiser_id='$club'";
+        $con->query($sql);
+      }
+    echo '{"message" : "success"}';
+  } else {
     echo '{"message" : "failure"}';
 }
 }
@@ -93,13 +108,13 @@ if ($con->query($sql) === TRUE) {
 }
 elseif($_GET['action']=='checkCouponUser'){
 $userid = mysqli_real_escape_string($con,$_GET['userid']);
-$check_user=mysqli_query($con,"SELECT * FROM couponusers WHERE bitsid='$userid' AND couponused='0' AND userid='$userid'");
+$check_user=mysqli_query($con,"SELECT * FROM couponusers WHERE bitsid='$userid' AND couponused='0'");
 $rows=mysqli_num_rows($check_user);
 if($rows>0){
-    	echo '{"message" : "coupon available"}';
+    	echo '{"message" : true}';
 }
 else{
-    echo '{"message" : "coupon used"}';
+    echo '{"message" : false}';
 }
 
 }

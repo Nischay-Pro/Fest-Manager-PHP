@@ -43,7 +43,7 @@ else{
                     <label  class="col-sm-2 control-label"
                               for="sel1">Event Name</label>
                     <div class="col-sm-10">
-                        <?php getEventdropdown(); ?>
+                        <?php getEventDropdown(); ?>
                     </div>
                   </div>
                   <div class="form-group">
