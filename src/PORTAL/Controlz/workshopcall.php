@@ -40,14 +40,14 @@ if ($con->query($sql) === TRUE) {
 }
 }
 elseif($_GET['action']=='registerUser'){
-$userid = mysqli_real_escape_string($con,$_GET['userid']);
+$userid = strtolower(mysqli_real_escape_string($con,$_GET['userid']));
 $eventid = mysqli_real_escape_string($con,$_GET['workshopid']);
 $iscoupon = mysqli_real_escape_string($con,$_GET['iscoupon']);
 $club = $_SESSION['controlz_id'];
 $check_user=mysqli_query($con,"SELECT * FROM event_workshops_participants WHERE eventid='$eventid' AND is_delete='0' AND userid='$userid'");
 $rows=mysqli_num_rows($check_user);
 if($rows>0){
-    	echo '{"message" : "exists"}';
+    	echo '{"message" : "User Already Added"}';
 }
 else{
     // "INSERT INTO event_workshops_participants(`userid`,`eventid`,`is_coupon`) VALUES('$userid','$eventid','$iscoupon')";
@@ -60,7 +60,8 @@ $run=mysqli_query($con,"INSERT INTO event_workshops_participants(`userid`,`event
     //}
       if($iscoupon=='1'){
       $sql = "UPDATE event_credentials SET collection=collection+$cost[4],coupons=coupons+1 WHERE organiser_id='$club'";
-           echo $sql;
+          $con->query($sql);
+        $sql = "UPDATE couponusers SET couponused=1 WHERE bitsid='$userid'";
           $con->query($sql);
       }
       else{

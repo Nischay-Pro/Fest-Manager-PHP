@@ -30,10 +30,7 @@ else{
 <nav>
  <ul class="navigbar">
  <li><a href="index.php">Controlz Panel :P</a></li>
-  <li><a href="#">Add Event</a></li>
-  <li><a href="sendnotif.php">Send Notification</a></li>
-  <li><a href="participants.php">Participants</a></li>
-  <li><a href="#">Team</a></li>
+  <li><a href="workshop.php">Back to Workshop Dashboard</a></li>
   <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
  </ul>
@@ -59,16 +56,16 @@ else{
                     </div>
                   </div>
                   <div class="form-group">
-                    <input class="col-sm-2 btn btn-lg btn-success" onclick="checkCoupon()" value="Coupon?" name="register" >
-                    <div class="col-sm-10">
+                    <input class="col-sm-6 btn btn-lg btn-success" onclick="checkCoupon()" value="Check and Apply Coupon" name="register" >
+                    <div class="col-sm-6">
                         <input type="text" class="form-control"
-                            id="coupon" placeholder="Coupon Not Applied (default)."/>
+                            id="coupon" disabled placeholder="Coupon Not Applied (default)."/>
                     </div>
                   </div>
                                    
       </div>
       
-        <input class="btn btn-lg btn-success" type="submit" value="Add Event" name="register" >
+        <input class="btn btn-lg btn-success col-sm-6" style="margin-left:25vw" type="submit" value="Add User" name="register" >
       </div>
       </form>
       </div>

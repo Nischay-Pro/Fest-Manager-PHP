@@ -30,10 +30,7 @@ else{
 <nav>
  <ul class="navigbar">
  <li><a href="index.php">Controlz Panel :P</a></li>
-  <li><a href="#">Add Event</a></li>
-  <li><a href="sendnotif.php">Send Notification</a></li>
-  <li><a href="participants.php">Participants</a></li>
-  <li><a href="#">Team</a></li>
+  <li><a href="workshop.php">Back to Workshop Dashboard</a></li>
   <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
 </nav>
@@ -76,7 +73,7 @@ else{
                                    
       </div>
       
-        <input class="btn btn-lg btn-success" type="button" value="Add Event" name="register" onclick="confirmDiag()">
+        <input class="btn btn-lg btn-success col-sm-6" style="margin-left:25vw" type="submit" value="Add Workshop" name="register" >
       </div>
       </form>
       </div>
