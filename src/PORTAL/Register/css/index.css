@@ -1,6 +1,3 @@
-.heading{
-    color:white;
-  }
   body{
      font-family: 'Slabo 27px', serif;
   }
@@ -8,12 +5,8 @@
     color:white;
   }
   .field-wrap label{
-    color:white;
-    font-weight:400;
     
-  }
-  .control-label{
-    color:white;
+    font-weight:400;
   }
   .checkbox{
     width:20%;
