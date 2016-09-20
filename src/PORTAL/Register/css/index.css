@@ -1,0 +1,26 @@
+.heading{
+    color:white;
+  }
+  body{
+     font-family: 'Slabo 27px', serif;
+  }
+  input[type="text"]{
+    color:white;
+  }
+  .field-wrap label{
+    color:white;
+    font-weight:400;
+    
+  }
+  .control-label{
+    color:white;
+  }
+  .checkbox{
+    width:20%;
+  }
+  #inputEmail3{
+    color:black;
+  }
+  .navigbar{
+    z-index:999 ;
+  }
