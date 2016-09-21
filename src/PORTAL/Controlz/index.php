@@ -56,9 +56,9 @@ $(document).ready(function(){
 <body>
 <nav>
  <ul class="navigbar">
-  <li><a href="addevent.php">Add Event</a></li>
+  <li><a href="event.php">Events</a></li>
   <li><a href="send_notification.php">Send Notification</a></li>
-  <li><a href="participants.php">Participants</a></li>
+ 
     <li><a href="workshop.php">Workshops</a></li>
   <li><a href="#">Team</a></li>
 
