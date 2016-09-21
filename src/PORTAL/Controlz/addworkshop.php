@@ -69,10 +69,11 @@ else{
             id="datetimepicker" name="time" placeholder="Workshop Time"/>
           </div>
         </div>
-      </form>
+          <input class="btn btn-lg btn-success col-sm-6" style="margin-left:25vw" type="submit" value="Add Workshop" name="register" >
+
+        </form>
     </div>
     
-    <input class="btn btn-lg btn-success col-sm-6" style="margin-left:25vw" type="submit" value="Add Workshop" name="register" >
   </div>
   
 </div>

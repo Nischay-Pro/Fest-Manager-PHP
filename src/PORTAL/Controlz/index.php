@@ -5,7 +5,7 @@ if(!isset($_SESSION['controlz_id'])){
   echo "<script>window.open('login.php','_self')</script>";
 }
 else{
-    echo "<script>window.open('workshop.php','_self')</script>";
+    //echo "<script>window.open('workshop.php','_self')</script>";
   // start controlz work here
 }
 
@@ -56,9 +56,9 @@ $(document).ready(function(){
 <body>
 <nav>
  <ul class="navigbar">
-  <li><a href="addevent.php">Add Event</a></li>
+  <li><a href="event.php">Events</a></li>
   <li><a href="send_notification.php">Send Notification</a></li>
-  <li><a href="participants.php">Participants</a></li>
+ 
     <li><a href="workshop.php">Workshops</a></li>
   <li><a href="#">Team</a></li>
 
