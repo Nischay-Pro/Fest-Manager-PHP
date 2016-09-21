@@ -2,7 +2,7 @@
 session_start();
 include("../functions/functions.php");
 //echo "<script>window.open('workshop.php','_self')</script>";
-$con=mysqli_connect("localhost","root","060848","pearl_16");
+//$con=mysqli_connect("localhost","root","060848","pearl_16");
 if($_GET['action']=='registerEvent'){
 $name = mysqli_real_escape_string($con,$_GET['name']);
 $room = mysqli_real_escape_string($con,$_GET['room']);
