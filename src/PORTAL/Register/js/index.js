@@ -48,14 +48,51 @@ var validateData = function(){
   return true;
 }
 
+var submitForm = function(){
+  console.log("Me was called.");
+}
+
 var register = function(){
   data.fest_id.value=data.fest_id.value.toUpperCase();
   var form = document.getElementById('my-fucking-form');
   if(validateData()) {
-    if(data.accom.checked||data.reg.checked)
-    form.submit();
-    form.reset();
-    return false;
+    if(data.accom.checked||data.reg.checked){
+      swal({
+        title: "Master Password",
+        text: "Please enter master password for alloting Free Services.",
+        type: "input",
+        inputType: "password",
+        showCancelButton: true,
+        closeOnConfirm: false,
+        animation: "slide-from-top",
+        inputPlaceholder: "Master Password",
+        showLoaderOnConfirm: true,
+      },
+      function(inputValue){
+        if (inputValue === false) return false;
+        else if (inputValue === "") {
+          swal.showInputError("You need to write something!");
+          return false
+        }
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var res = JSON.parse(this.responseText);
+            if(res.message){
+              submitForm();
+            }
+            else{
+              swal.showInputError("Invalid Master Password");
+            }
+          }
+        };
+        request.open("GET", "master.php/?action=masterpassword&password="+inputValue, true);
+        request.send();
+      });
+    }
+    else{
+      submitForm();
+    }
   }
 }
 

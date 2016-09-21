@@ -53,28 +53,28 @@ $result=mysqli_fetch_array($team_collection);
           <label  class="col-sm-4 control-label"
           for="name">Participant ID</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" id="fest_id" name="fest_id" placeholder="p#####"/>
+            <input type="text" class="form-control" id="fest_id" name="fest_id" placeholder="ATMH#####"/>
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-4 control-label"
           for="room" >Participant Name</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" id="name" name="name" placeholder=""/>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Participant's Name"/>
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-4 control-label"
           for="cost" >College Name</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" id="college" name="college" placeholder=""/>
+            <input type="text" class="form-control" id="college" name="college" placeholder="Participant's College"/>
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-4 control-label"
           for="time" >Phone Number</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" id="phone" name="phone" placeholder="10 digit phone number."/>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="10 digit phone number"/>
           </div>
         </div>
         <div class="form-group">
