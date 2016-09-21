@@ -115,13 +115,14 @@ function getEventDropdown(){
 $query=mysqli_query($con,"SELECT * FROM pearl_events ORDER BY event_name ASC");
 $i=1;
   echo '<div class="form-group">
-  <select class="form-control" id="sel1" name="Event_id">';
+  <input type="text" list="eventlist" class="form-control" id="sel1" name="Event_id"/>
+  <datalist id="eventlist">';
   while($result=mysqli_fetch_array($query)){
     $name=$result['event_name'];
     $event_id=$result['event_id'];
     echo '<option id="'.$event_id.'" value="'.$event_id.'">'.$name.'</option>';
   }
- echo '</select></div>';
+ echo '</datalist></div>';
 }
 function getIndiParticipants(){
 	$con=mysqli_connect("localhost","root","060848","pearl_16");

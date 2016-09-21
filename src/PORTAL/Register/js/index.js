@@ -131,15 +131,14 @@ function checkOnline(){
     if (inputValue === false) return false;
     else if (inputValue === "") {
       swal.showInputError("You need to write something!");
-      return false
-    }
-    else if (inputValue.startsWith('ATMH')){
-      param = "online_register";
       return false;
+    }
+    inputValue = inputValue.toUpperCase();
+    if (inputValue.startsWith('ATMH')){
+      param = "online_register";
     }
     else if (inputValue.startsWith('ATMH_CA')){
       param = "online_ca_register";
-      return false;
     }
     else {
       swal.showInputError("Invalid Atmos ID format.");
@@ -148,12 +147,15 @@ function checkOnline(){
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        var res = JSON.parse(this.responseText);
-        //if(res.)
+        //var res = JSON.parse(this.responseText);
+        console.log(this.responseText);
       }
     };
-    request.open("GET", "workshopcall.php/?action=checkCouponUser&userid=", true);
-    request.send();
+    var data = new FormData();
+    data.append(param, '1');
+    data.append('atmos_id', inputValue);
+    request.open("POST", "http://bits-atmos.org/App/doshReg.php", true);
+    request.send(data);
   });
 }
   

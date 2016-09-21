@@ -38,14 +38,14 @@ else{
 </nav>
 <div class="container" style="width:50%">
 <div class="space"></div>
-<form class="form-horizontal" action="workshopcall.php" role="form" method="GET">
+<form class="form-horizontal" action="eventcall.php" role="form" method="GET">
               <input type="hidden" name="action" value="registerUser">
               <input type="hidden" name="iscoupon" id="coupon-hidden" value="0">
                   <div class="form-group">
                     <label  class="col-sm-2 control-label"
                               for="sel1">Event Name</label>
                     <div class="col-sm-10">
-                        <?php getWorkshopDropdown(); ?>
+                        <?php getEventDropdown(); ?>
                     </div>
                   </div>
                   <div class="form-group">
