@@ -50,6 +50,25 @@ var validateData = function(){
 
 var submitForm = function(){
   console.log("Me was called.");
+  var url = "register.php/?";
+  url += "fest_id="+data.fest_id.value;
+  url += "&college="+data.college.value;
+  url += "&name="+data.name.value;
+  url += "&email="+data.email.value;
+  url += "&phone="+data.phone.value;
+  url += "&accom="+data.accom.checked;
+  url += "&reg="+data.reg.checked;
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var res = JSON.parse(this.responseText);
+      console.log(this.responseText);
+      swal(res.title, res.message, res.type);
+    }
+  };
+
+  request.open("GET", url, true);
+  request.send();
 }
 
 var register = function(){
