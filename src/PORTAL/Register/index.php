@@ -21,7 +21,6 @@ $result=mysqli_fetch_array($team_collection);
     <script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="../../js/sweetalert.min.js"></script>
     <script type="text/javascript" src="../bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <style type="text/css">
     .space{
     width:100%;
@@ -43,57 +42,57 @@ $result=mysqli_fetch_array($team_collection);
     </nav>
     <div class="container" style="width:50%">
       <div class="space"></div>
-      <form class="form-horizontal" action="workshopcall.php" role="form" method="GET" id="my-fucking-form">
+      <form class="form-horizontal" action="register.php" role="form" method="POST" id="my-fucking-form">
         <input type="hidden" name="action" value="registerEvent">
         <div class="form-group">
           <label  class="col-sm-4 control-label"
           for="name">Participant ID</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control"
-            id="name" name="name" placeholder="Workshop Name"/>
+            <input type="text" class="form-control" id="fest_id" name="fest_id" placeholder="p#####"/>
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-4 control-label"
           for="room" >Participant Name</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control"
-            id="room" name="room" placeholder="Room Number"/>
+            <input type="text" class="form-control" id="name" name="name" placeholder=""/>
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-4 control-label"
           for="cost" >College Name</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control"
-            id="cost" name="cost" placeholder="Cost"/>
+            <input type="text" class="form-control" id="college" name="college" placeholder=""/>
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-4 control-label"
           for="time" >Phone Number</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control"
-            id="datetimepicker" name="time" placeholder="Workshop Time"/>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="10 digit phone number."/>
           </div>
         </div>
         <div class="form-group">
           <label class="col-sm-4 control-label"
           for="time" >Email</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control"
-            id="datetimepicker" name="time" placeholder="Workshop Time"/>
+            <input type="text" class="form-control" id="email" name="email" placeholder="username@domain.com"/>
           </div>
         </div>
         <div class="form-group">
-            <button type="button" class="btn btn-lg btn-primary col-sm-4" name="register">Clear</button>
-            <button type="button" class="btn btn-lg btn-success col-sm-8" name="register" >Add Participant</button>
+          <div class="checkbox col-sm-6">
+            <label><input type="checkbox" id="reg" name="reg" >Free Registration</label>
+          </div>
+          <div class="checkbox col-sm-6">
+            <label><input type="checkbox" id="accom" name="accom" >Free Accomodation</label>
+          </div>
         </div>
       </form>
+      <div class="form-group">
+        <button class="btn btn-lg btn-primary col-sm-4" name="register" onclick="clearData()">Clear</button>
+        <button type="submit" class="btn btn-lg btn-success col-sm-8" name="register" >Add Participant</button>
+      </div>
     </div>
-    
-  </div>
-  <script type="text/javascript">
-</div>
-</body>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
 </html>
