@@ -5,7 +5,7 @@ if(!isset($_SESSION['controlz_id'])){
   echo "<script>window.open('login.php','_self')</script>";
 }
 else{
-    echo "<script>window.open('workshop.php','_self')</script>";
+    //echo "<script>window.open('workshop.php','_self')</script>";
   // start controlz work here
 }
 

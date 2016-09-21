@@ -26,7 +26,7 @@ $result=mysqli_fetch_array($team_collection);
     <style type="text/css">
     .space{
     width:100%;
-    height: 50px;
+    height: 100px;
     }</style>
   </head>
   <body>
@@ -44,6 +44,9 @@ $result=mysqli_fetch_array($team_collection);
     </nav>
     <div class="container" style="width:50%">
       <div class="space"></div>
+      <div class="form-group">
+        <button class="btn btn-lg btn-primary col-sm-12" name="register" onclick="checkOnline()">Registered Online?</button>  
+      </div>
       <form class="form-horizontal" action="register.php" role="form" method="POST" id="my-fucking-form">
         <input type="hidden" name="action" value="registerEvent">
         <div class="form-group">

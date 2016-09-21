@@ -44,7 +44,7 @@ var validateData = function(){
     toastr.error('Please format as user@hostname.something', 'Email Invalid');
     return false;
   }
-  toastr.success('You made it.','WTF How?');
+  //toastr.success('You made it.','WTF How?');
   return true;
 }
 
@@ -52,11 +52,55 @@ var register = function(){
   data.fest_id.value=data.fest_id.value.toUpperCase();
   var form = document.getElementById('my-fucking-form');
   if(validateData()) {
+    if(data.accom.checked||data.reg.checked)
     form.submit();
     form.reset();
     return false;
   }
 }
+
+function checkOnline(){
+  swal({
+    title: "Atmos ID",
+    text: "Please enter the Atmos ID",
+    type: "input",
+    showCancelButton: true,
+    closeOnConfirm: false,
+    animation: "slide-from-top",
+    inputPlaceholder: "ATMH***",
+    showLoaderOnConfirm: true,
+  },
+  function(inputValue){
+    var param = "";
+    if (inputValue === false) return false;
+    else if (inputValue === "") {
+      swal.showInputError("You need to write something!");
+      return false
+    }
+    else if (inputValue.startsWith('ATMH')){
+      param = "online_register";
+      return false;
+    }
+    else if (inputValue.startsWith('ATMH_CA')){
+      param = "online_ca_register";
+      return false;
+    }
+    else {
+      swal.showInputError("Invalid Atmos ID format.");
+      return false;
+    }
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var res = JSON.parse(this.responseText);
+        //if(res.)
+      }
+    };
+    request.open("GET", "workshopcall.php/?action=checkCouponUser&userid=", true);
+    request.send();
+  });
+}
+  
 
 window.onload=function(e){
   clearData();
