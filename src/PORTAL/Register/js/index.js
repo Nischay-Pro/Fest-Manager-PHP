@@ -7,7 +7,7 @@ data.phone = document.getElementById('phone');
 data.accom = document.getElementById('accom');
 data.reg = document.getElementById('reg');
 
-var clearData = function(){
+function clearData(){
   data.fest_id.value="";
   data.college.value="";
   data.name.value="";
@@ -15,9 +15,14 @@ var clearData = function(){
   data.phone.value="";
   data.accom.checked=false;
   data.reg.checked=false;
+  data.fest_id.removeAttribute("disabled");;
+  data.college.removeAttribute("disabled");;
+  data.name.removeAttribute("disabled");;
+  data.email.removeAttribute("disabled");;
+  data.phone.removeAttribute("disabled");;
 }
 
-var validateData = function(){
+function validateData(){
   var formdata = {};
   formdata.fest_id=data.fest_id.value;
   formdata.name=data.name.value;
@@ -48,7 +53,7 @@ var validateData = function(){
   return true;
 }
 
-var submitForm = function(){
+function submitForm(){
   console.log("Me was called.");
   var url = "register.php/?";
   url += "fest_id="+data.fest_id.value;
@@ -71,7 +76,7 @@ var submitForm = function(){
   request.send();
 }
 
-var register = function(){
+function register(){
   data.fest_id.value=data.fest_id.value.toUpperCase();
   var form = document.getElementById('my-fucking-form');
   if(validateData()) {
@@ -147,18 +152,33 @@ function checkOnline(){
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-        //var res = JSON.parse(this.responseText);
-        console.log(this.responseText);
+        var res = JSON.parse(this.responseText);
+        if(res.status==300){
+          swal.showInputError("ATMOS ID not found.");
+          return false;
+        }
+        if(res.status==200){
+          data.fest_id.value=inputValue;
+          data.college.value=res.college;
+          data.name.value=res.name;
+          data.email.value=res.email;
+          data.phone.value=res.phone;
+          data.fest_id.disabled=true;
+          data.college.disabled=true;
+          data.name.disabled=true;
+          data.email.disabled=true;
+          data.phone.disabled=true;
+          swal("ATMOS ID Found.", "User Details Have Been Filled.", "success");
+        }
       }
     };
-    var data = new FormData();
-    data.append(param, '1');
-    data.append('atmos_id', inputValue);
+    var formdatatosend = new FormData();
+    formdatatosend.append(param, '1');
+    formdatatosend.append('atmos_id', inputValue);
     request.open("POST", "http://bits-atmos.org/App/doshReg.php", true);
-    request.send(data);
+    request.send(formdatatosend);
   });
 }
-  
 
 window.onload=function(e){
   clearData();
