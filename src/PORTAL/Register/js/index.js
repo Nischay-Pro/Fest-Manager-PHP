@@ -49,7 +49,6 @@ function validateData(){
     toastr.error('Please format as user@hostname.something', 'Email Invalid');
     return false;
   }
-  //toastr.success('You made it.','WTF How?');
   return true;
 }
 
@@ -71,7 +70,6 @@ function submitForm(){
       swal(res.title, res.message, res.type);
     }
   };
-
   request.open("GET", url, true);
   request.send();
 }
@@ -96,7 +94,7 @@ function register(){
         if (inputValue === false) return false;
         else if (inputValue === "") {
           swal.showInputError("You need to write something!");
-          return false
+          return false;
         }
         var request = new XMLHttpRequest();
         request.onreadystatechange = function() {
@@ -132,7 +130,7 @@ function checkOnline(){
     showLoaderOnConfirm: true,
   },
   function(inputValue){
-    var param = "";
+    var param = false;
     if (inputValue === false) return false;
     else if (inputValue === "") {
       swal.showInputError("You need to write something!");
@@ -142,10 +140,10 @@ function checkOnline(){
     if (inputValue.startsWith('ATMH')){
       param = "online_register";
     }
-    else if (inputValue.startsWith('ATMH_CA')){
+    if (inputValue.startsWith('ATMH_CA')){
       param = "online_ca_register";
     }
-    else {
+    if(!param){
       swal.showInputError("Invalid Atmos ID format.");
       return false;
     }
