@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e34cc6b0-a79a-4d4a-864a-cb22b9774309" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PORTAL/CRC/workshop.php" afterPath="$PROJECT_DIR$/src/PORTAL/CRC/workshop.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PORTAL/functions/functions.php" afterPath="$PROJECT_DIR$/src/PORTAL/functions/functions.php" />
     </list>
     <ignored path="organizer.iws" />
@@ -45,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/workshop.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1872">
-              <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
+              <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -129,27 +130,29 @@
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PORTAL/functions/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+            <state relative-caret-position="767">
+              <caret line="67" column="20" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
               <folding>
-                <marker date="1475498820301" expanded="true" signature="194:247" ph="SELECT * FRO... event_details" />
-                <marker date="1475498820301" expanded="true" signature="562:838" ph="..." />
-                <marker date="1475498820301" expanded="true" signature="1095:1162" ph="SELECT * FRO... event_workshops" />
-                <marker date="1475498820301" expanded="true" signature="1414:1795" ph="..." />
-                <marker date="1475498820301" expanded="true" signature="1957:1983" ph="SELECT * FRO... pearl_events" />
-                <marker date="1475498820301" expanded="true" signature="2117:2209" ph="..." />
-                <marker date="1475498820301" expanded="true" signature="2389:2460" ph="SELECT * FRO... event_workshops" />
-                <marker date="1475498820301" expanded="true" signature="2501:2561" ph="..." />
-                <marker date="1475498820301" expanded="true" signature="2924:3273" ph="SELECT useri... event_workshops_participants" />
-                <marker date="1475498820301" expanded="true" signature="3314:3374" ph="..." />
-                <marker date="1475498820301" expanded="true" signature="3733:3981" ph="..." />
-                <marker date="1475498820301" expanded="true" signature="4244:4294" ph="SELECT * FRO... pearl_events" />
-                <marker date="1475498820301" expanded="true" signature="4335:4450" ph="..." />
-                <marker date="1475498820301" expanded="true" signature="4800:4920" ph="SELECT * FRO... users" />
-                <marker date="1475498820301" expanded="true" signature="5123:5263" ph="..." />
-                <marker date="1475498820301" expanded="true" signature="5405:5543" ph="SELECT * FRO... users" />
-                <marker date="1475498820301" expanded="true" signature="5746:5886" ph="..." />
-                <marker date="1475498820301" expanded="true" signature="6003:6177" ph="Select Pearl... accomodation" />
+                <marker date="1475501339797" expanded="true" signature="194:247" ph="SELECT * FRO... event_details" />
+                <marker date="1475501339797" expanded="true" signature="562:838" ph="..." />
+                <marker date="1475501339797" expanded="true" signature="1095:1162" ph="SELECT * FRO... event_workshops" />
+                <marker date="1475501339797" expanded="true" signature="1414:1795" ph="..." />
+                <marker date="1475501339797" expanded="true" signature="2058:2125" ph="SELECT * FRO... event_workshops" />
+                <marker date="1475501339797" expanded="true" signature="2362:2667" ph="..." />
+                <marker date="1475501339797" expanded="true" signature="2836:2862" ph="SELECT * FRO... pearl_events" />
+                <marker date="1475501339797" expanded="true" signature="2996:3088" ph="..." />
+                <marker date="1475501339797" expanded="true" signature="3268:3339" ph="SELECT * FRO... event_workshops" />
+                <marker date="1475501339797" expanded="true" signature="3380:3440" ph="..." />
+                <marker date="1475501339797" expanded="true" signature="3803:4152" ph="SELECT useri... event_workshops_participants" />
+                <marker date="1475501339797" expanded="true" signature="4193:4253" ph="..." />
+                <marker date="1475501339797" expanded="true" signature="4612:4860" ph="..." />
+                <marker date="1475501339797" expanded="true" signature="5123:5173" ph="SELECT * FRO... pearl_events" />
+                <marker date="1475501339797" expanded="true" signature="5214:5329" ph="..." />
+                <marker date="1475501339797" expanded="true" signature="5679:5799" ph="SELECT * FRO... users" />
+                <marker date="1475501339797" expanded="true" signature="6002:6142" ph="..." />
+                <marker date="1475501339797" expanded="true" signature="6284:6422" ph="SELECT * FRO... users" />
+                <marker date="1475501339797" expanded="true" signature="6625:6765" ph="..." />
+                <marker date="1475501339797" expanded="true" signature="6882:7056" ph="Select Pearl... accomodation" />
               </folding>
             </state>
           </provider>
@@ -178,8 +181,8 @@
         <option value="$PROJECT_DIR$/src/PORTAL/CRC/users.php" />
         <option value="$PROJECT_DIR$/src/PORTAL/CRC/logout.php" />
         <option value="$PROJECT_DIR$/src/PORTAL/CRC/usersevent.php" />
-        <option value="$PROJECT_DIR$/src/PORTAL/functions/functions.php" />
         <option value="$PROJECT_DIR$/src/PORTAL/Controlz/addevent.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/functions/functions.php" />
       </list>
     </option>
   </component>
@@ -389,12 +392,12 @@
       <option name="presentableId" value="Default" />
       <updated>1475301013564</updated>
       <workItem from="1475301017883" duration="1948000" />
-      <workItem from="1475498689676" duration="2134000" />
+      <workItem from="1475498689676" duration="2674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4082000" />
+    <option name="totallyTimeSpent" value="4622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="741" extended-state="6" />
@@ -486,7 +489,7 @@
     <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/workshop.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1872">
-          <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
+          <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -566,27 +569,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PORTAL/functions/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+        <state relative-caret-position="767">
+          <caret line="67" column="20" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
           <folding>
-            <marker date="1475498820301" expanded="true" signature="194:247" ph="SELECT * FRO... event_details" />
-            <marker date="1475498820301" expanded="true" signature="562:838" ph="..." />
-            <marker date="1475498820301" expanded="true" signature="1095:1162" ph="SELECT * FRO... event_workshops" />
-            <marker date="1475498820301" expanded="true" signature="1414:1795" ph="..." />
-            <marker date="1475498820301" expanded="true" signature="1957:1983" ph="SELECT * FRO... pearl_events" />
-            <marker date="1475498820301" expanded="true" signature="2117:2209" ph="..." />
-            <marker date="1475498820301" expanded="true" signature="2389:2460" ph="SELECT * FRO... event_workshops" />
-            <marker date="1475498820301" expanded="true" signature="2501:2561" ph="..." />
-            <marker date="1475498820301" expanded="true" signature="2924:3273" ph="SELECT useri... event_workshops_participants" />
-            <marker date="1475498820301" expanded="true" signature="3314:3374" ph="..." />
-            <marker date="1475498820301" expanded="true" signature="3733:3981" ph="..." />
-            <marker date="1475498820301" expanded="true" signature="4244:4294" ph="SELECT * FRO... pearl_events" />
-            <marker date="1475498820301" expanded="true" signature="4335:4450" ph="..." />
-            <marker date="1475498820301" expanded="true" signature="4800:4920" ph="SELECT * FRO... users" />
-            <marker date="1475498820301" expanded="true" signature="5123:5263" ph="..." />
-            <marker date="1475498820301" expanded="true" signature="5405:5543" ph="SELECT * FRO... users" />
-            <marker date="1475498820301" expanded="true" signature="5746:5886" ph="..." />
-            <marker date="1475498820301" expanded="true" signature="6003:6177" ph="Select Pearl... accomodation" />
+            <marker date="1475501339797" expanded="true" signature="194:247" ph="SELECT * FRO... event_details" />
+            <marker date="1475501339797" expanded="true" signature="562:838" ph="..." />
+            <marker date="1475501339797" expanded="true" signature="1095:1162" ph="SELECT * FRO... event_workshops" />
+            <marker date="1475501339797" expanded="true" signature="1414:1795" ph="..." />
+            <marker date="1475501339797" expanded="true" signature="2058:2125" ph="SELECT * FRO... event_workshops" />
+            <marker date="1475501339797" expanded="true" signature="2362:2667" ph="..." />
+            <marker date="1475501339797" expanded="true" signature="2836:2862" ph="SELECT * FRO... pearl_events" />
+            <marker date="1475501339797" expanded="true" signature="2996:3088" ph="..." />
+            <marker date="1475501339797" expanded="true" signature="3268:3339" ph="SELECT * FRO... event_workshops" />
+            <marker date="1475501339797" expanded="true" signature="3380:3440" ph="..." />
+            <marker date="1475501339797" expanded="true" signature="3803:4152" ph="SELECT useri... event_workshops_participants" />
+            <marker date="1475501339797" expanded="true" signature="4193:4253" ph="..." />
+            <marker date="1475501339797" expanded="true" signature="4612:4860" ph="..." />
+            <marker date="1475501339797" expanded="true" signature="5123:5173" ph="SELECT * FRO... pearl_events" />
+            <marker date="1475501339797" expanded="true" signature="5214:5329" ph="..." />
+            <marker date="1475501339797" expanded="true" signature="5679:5799" ph="SELECT * FRO... users" />
+            <marker date="1475501339797" expanded="true" signature="6002:6142" ph="..." />
+            <marker date="1475501339797" expanded="true" signature="6284:6422" ph="SELECT * FRO... users" />
+            <marker date="1475501339797" expanded="true" signature="6625:6765" ph="..." />
+            <marker date="1475501339797" expanded="true" signature="6882:7056" ph="Select Pearl... accomodation" />
           </folding>
         </state>
       </provider>

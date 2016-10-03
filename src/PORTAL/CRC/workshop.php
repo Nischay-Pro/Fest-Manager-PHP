@@ -102,7 +102,7 @@ function editMe(row){
       </tr>
     </thead>
      <tbody>
-  	<?php getworkshops();
+  	<?php getworkshopsCRC();
   	?>
   </tbody>
 </table>
