@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include("../functions/functions.php");
+include("functions/functions.php");
 $_SESSION['crc_id'];
 if(!isset($_SESSION['crc_id'])){
   echo "redirected";
@@ -28,43 +28,17 @@ else{
  .space{
     width:100%;
     height: 50px;
-  }</style>
-<script>
-$(document).ready(function(){
-	
-    $(function(){
-	//acknowledgement message
-    var message_status = $("#status");
-    $("td[contenteditable=true]").blur(function(){
-        var field_userid = $(this).attr("id") ;
-        var value = $(this).text() ;
-        $.post('ajax.php' , field_userid + "=" + value, function(data){
-            if(data != '')
-			{
-				message_status.show();
-				message_status.text(data);
-				//hide the message
-				setTimeout(function(){message_status.hide()},3000);
-			}
-        });
-    });
-});
-	
-});
-
-</script>
-
+  }
+</style>
 </head>
 <body>
 <nav>
  <ul class="navigbar">
-  <li><a href="event.php">Events</a></li>
-  <li><a href="send_notification.php">Send Notification</a></li>
- 
-    <li><a href="workshop.php">Workshops</a></li>
-  <li><a href="#">Team</a></li>
-
-  <li style="float:right"><a href="logout.php">Log Out</a></li>
+     <li><a href="event.php">Events</a></li>
+     <li><a href="workshop.php">Workshops</a></li>
+     <li><a href="registeredonlinedata.php">Registered Users</a></li>
+     <li><a href="accomodation.php">Accomodation</a></li>
+     <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
  </ul>
 </nav>

@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include("../functions/functions.php");
+include("functions/functions.php");
 if(!isset($_SESSION['crc_id'])){
   echo "<script>window.open('login.php','_self')</script>";
 }
@@ -32,50 +32,7 @@ else{
     background: red !important;
   }
 
-  </style>
-<script>
-$(document).ready(function(){
-	
-    $(function(){
-	//acknowledgement message
-    var message_status = $("#status");
-    $("td[contenteditable=true]").blur(function(){
-        var field_userid = $(this).attr("id") ;
-        var value = $(this).text() ;
-        $.post('ajax.php' , field_userid + "=" + value, function(data){
-            if(data != '')
-			{
-				message_status.show();
-				message_status.text(data);
-				//hide the message
-				setTimeout(function(){message_status.hide()},3000);
-			}
-        });
-    });
-});
-	
-});
-
-function editMe(row){
-  swal({
-  title: 'Delete this workshop?',
-  text: 'Let the people live. Say yas.',
-  type: 'warning',
-  showCancelButton: true,
-  closeOnConfirm: true,
-  disableButtonsOnConfirm: true,
-  confirmLoadingButtonColor: '#DD6B55'
-}, function(isConfirm){
-  if(isConfirm){
-    var val = document.getElementById('EventName:'+row.id).innerHTML;
-    document.getElementById('my-fucking-name').value=val;
-    document.getElementById('my-fucking-form').submit();
-  }
-});
-}
-
-</script>
-
+</style>
 </head>
 <body>
 <nav>
@@ -105,16 +62,8 @@ function editMe(row){
   	?>
   </tbody>
 </table>
-
-
-
+  </div>
 </div>
-</div>
-
-<form class="form-horizontal" action="workshopcall.php" role="form" method="GET" id="my-fucking-form">
-    <input type="hidden" name="action" value="deleteEvent"/>
-    <input type="hidden" name="name" value="" id="my-fucking-name"/>
-</form>
 
 </body>
 </html>
