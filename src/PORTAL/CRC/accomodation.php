@@ -54,7 +54,7 @@ else{
 <body>
 <nav>
     <ul class="navigbar">
-        <li><a href="index.php">crc Panel :P</a></li>
+        <li><a href="index.php">CRC PANEL</a></li>
         <li style="float:right"><a href="logout.php">Log Out</a></li>
     </ul>
     </ul>

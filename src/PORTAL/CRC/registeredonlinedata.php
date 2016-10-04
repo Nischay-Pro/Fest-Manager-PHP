@@ -57,13 +57,13 @@ else{
 <body>
 <nav>
 	<ul class="navigbar">
-		<li><a href="index.php">crc Panel :P</a></li>
+		<li><a href="index.php">CRC PANEL</a></li>
 		<li style="float:right"><a href="logout.php">Log Out</a></li>
 	</ul>
 	</ul>
 </nav>
 <div class="space"></div>
-<div id='reg_list'>Registerd Users</div>
+<div id='reg_list'>Registered Users</div>
 <form action="csvgenws.php" method="get">
 	<input type="hidden" name="reg_list" value="reg_list"/>
 	<input id="gencsv_butt"  type="submit" value="Generate CSV" />

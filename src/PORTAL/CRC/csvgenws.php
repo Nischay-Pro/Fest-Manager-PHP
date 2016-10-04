@@ -17,7 +17,7 @@ if(isset($_GET['id'])) {
     header('Content-Disposition: attachment; filename=' . $filename);
     $output = fopen('php://output', 'w');
     fputcsv($output, array('S.no', 'Atmos_id', 'Registered_at', 'Coupon Applied?'));
-    $query = "SELECT userid,created_at,is_coupon FROM event_workshops_participants WHERE id=$workshop_id";
+    $query = "SELECT userid,created_at,is_coupon FROM event_workshops_participants WHERE eventid=$workshop_id";
     $result = mysqli_query($con, $query);
     $i = 1;
     while ($row = mysqli_fetch_assoc($result)) {

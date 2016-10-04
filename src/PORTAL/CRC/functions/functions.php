@@ -58,13 +58,14 @@ function getWorkshopsCRC(){
         $id=$result['id'];
         $Workshop_name=$result['name'];
         $Workshop_date=$result['time'];
-        $Workshop_cost=$result['cost'];
+        $Workshop_cost_general=$result['cost_general'];
+
         $Workshop_venue=$result['room'];
         echo "
 				<td>$i</td>
 				<td id='EventName:$id'><a href='workshopusers.php?id=$id'>$Workshop_name</a></td>
 				<td contenteditable='false' id='datetimepicker'>$Workshop_date</td>
-				<td contenteditable='false' id='Event_venue:$id'>$Workshop_cost</td>
+				<td contenteditable='false' id='Event_venue:$id'>$Workshop_cost_general</td>
         <td contenteditable='false' id='Event_cost:$id'>$Workshop_venue</td>
 				</tr>";
         $i++;
@@ -261,7 +262,7 @@ function getEventParticipants($event_id)
 function getWorkshopParticipants($workshop_id)
 {
     $con=mysqli_connect("localhost","root","060848","pearl_16");
-    $query="SELECT * FROM event_workshops_participants WHERE id=$workshop_id";
+    $query="SELECT * FROM event_workshops_participants WHERE eventid=$workshop_id";
     $result = mysqli_query($con,$query);
     $i=1;
     while ($row=mysqli_fetch_assoc($result))

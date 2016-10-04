@@ -33,56 +33,12 @@ else{
         }
 
     </style>
-    <script>
-        $(document).ready(function(){
-
-            $(function(){
-                //acknowledgement message
-                var message_status = $("#status");
-                $("td[contenteditable=true]").blur(function(){
-                    var field_userid = $(this).attr("id") ;
-                    var value = $(this).text() ;
-                    $.post('ajax.php' , field_userid + "=" + value, function(data){
-                        if(data != '')
-                        {
-                            message_status.show();
-                            message_status.text(data);
-                            //hide the message
-                            setTimeout(function(){message_status.hide()},3000);
-                        }
-                    });
-                });
-            });
-
-        });
-
-        function editMe(row){
-            swal({
-                title: 'Delete this workshop?',
-                text: 'Let the people live. Say yas.',
-                type: 'warning',
-                showCancelButton: true,
-                closeOnConfirm: true,
-                disableButtonsOnConfirm: true,
-                confirmLoadingButtonColor: '#DD6B55'
-            }, function(isConfirm){
-                if(isConfirm){
-                    var val = document.getElementById('EventName:'+row.id).innerHTML;
-                    document.getElementById('my-fucking-name').value=val;
-                    document.getElementById('my-fucking-form').submit();
-                }
-            });
-        }
-
-    </script>
-
 </head>
 <body>
 <nav>
     <ul class="navigbar">
         <li><a href="index.php">crc Panel :P</a></li>
         <li><a href="workshop.php">Back To Workshops</a></li>
-        <li><a href="addusers.php">Add Users</a></li>
         <li style="float:right"><a href="logout.php">Log Out</a></li>
     </ul>
     </ul>
