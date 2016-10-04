@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("functions/functions.php");
+// REPORT DELETE =0?
 if(!isset($_SESSION['team_id'])){
   echo "<script>window.open('login.php','_self')</script>";
 }
@@ -54,8 +55,8 @@ else{
  <ul class="navigbar">
   <li><a href="../reg/index.php">Registration</a></li>
   <li><a href="../acom/index.php">Accommodation</a></li>
-  <li><a href="report.php">Generate Accomodation Report</a></li>
-  <li><a href="#">About</a></li>
+  <!--li><a href="report.php">Pending Refunds</a></li-->
+  <li><a href="AcomExcel.php">Excel</a></li>
   <li><a href="#">Team</a></li>
   <ul style="float:right">
   <li ><a href="#">Team Collection:&nbsp;&nbsp;<?php echo $result['accom_collect']; ?></a></li>
@@ -107,7 +108,5 @@ else{
 		</div>
 	</div>
 	</div>
-
-
 </body>
 </html>

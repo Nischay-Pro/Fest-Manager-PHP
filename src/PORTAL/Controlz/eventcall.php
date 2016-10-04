@@ -2,7 +2,7 @@
 session_start();
 include("../functions/functions.php");
 //echo "<script>window.open('workshop.php','_self')</script>";
-//$con=mysqli_connect("localhost","root","060848","pearl_16");
+$con=mysqli_connect("localhost","root","060848","pearl_16");
 if($_GET['action']=='registerEvent'){
 $name = mysqli_real_escape_string($con,$_GET['name']);
 $room = mysqli_real_escape_string($con,$_GET['room']);
@@ -11,7 +11,7 @@ $time = str_replace('/','-',$time);
 $time = $time . ':00';
 $cost = mysqli_real_escape_string($con,$_GET['cost']);
 $club = $_SESSION['controlz_id'];
-$check_user=mysqli_query($con,"SELECT * FROM event_workshops WHERE `name`='$name' AND isdelete='0'");
+$check_user=mysqli_query($con,"SELECT * FROM event_workshops WHERE `name`='$name' AND `club`='$club' AND isdelete='0'");
 $rows=mysqli_num_rows($check_user);
 if($rows>0){
     	echo '{"message" : "exists"}';
@@ -40,11 +40,9 @@ if ($con->query($sql) === TRUE) {
 }
 }
 elseif($_GET['action']=='registerUser'){
-$userid = strtolower(mysqli_real_escape_string($con,$_GET['userid'])) . 'h';
+$userid = strtolower(mysqli_real_escape_string($con,$_GET['userid']));
 $eventid = mysqli_real_escape_string($con,$_GET['workshopid']);
 $iscoupon = mysqli_real_escape_string($con,$_GET['iscoupon']);
-$cost = mysqli_real_escape_string($con,$_GET['event-cost']);
-$outsider = mysqli_real_escape_string($con,$_GET['outsider']);
 $club = $_SESSION['controlz_id'];
 $check_user=mysqli_query($con,"SELECT * FROM event_workshops_participants WHERE eventid='$eventid' AND is_delete='0' AND userid='$userid'");
 $rows=mysqli_num_rows($check_user);
@@ -55,7 +53,7 @@ else{
     // "INSERT INTO event_workshops_participants(`userid`,`eventid`,`is_coupon`) VALUES('$userid','$eventid','$iscoupon')";
 $run=mysqli_query($con,"INSERT INTO event_workshops_participants(`userid`,`eventid`,`is_coupon`) VALUES('$userid','$eventid','$iscoupon')");
   if($run){
-      $loadevent=mysqli_query($con,"SELECT * FROM event_workshops WHERE isdelete='0' AND id='$eventid'");
+      $loadevent=mysqli_query($con,"SELECT * FROM event_workshops WHERE club='$club' AND isdelete='0' AND id='$eventid'");
       $cost = mysqli_fetch_array($loadevent);
       //while ($row = mysqli_fetch_row($loadevent)) {
       //  $cost = $row['cost'];
@@ -111,7 +109,7 @@ if ($con->query($sql) === TRUE) {
 }
 }
 elseif($_GET['action']=='checkCouponUser'){
-$userid = mysqli_real_escape_string($con,$_GET['userid']) . 'h';
+$userid = mysqli_real_escape_string($con,$_GET['userid']);
 $check_user=mysqli_query($con,"SELECT * FROM couponusers WHERE bitsid='$userid' AND couponused='0'");
 $rows=mysqli_num_rows($check_user);
 if($rows>0){
@@ -124,7 +122,7 @@ else{
 }
 elseif($_GET['action']=='getDataWorkshop'){
     $userid = mysqli_real_escape_string($con,$_GET['id']);
-    $query=mysqli_query($con,"SELECT * FROM event_workshops WHERE `id`='$userid'");
+    $query=mysqli_query($con,"SELECT * FROM atmos_events WHERE `id`='$userid'");
     $row=mysqli_fetch_array($query);
     $json[]= array(
         'cost_general' => $row['cost_general'],
@@ -140,4 +138,8 @@ elseif($_GET['action']=='getDataWorkshop'){
 else{
 	echo "Direct Access is denied";
 }
+else{
+	echo "Direct Access is denied";
+}
+
 ?>

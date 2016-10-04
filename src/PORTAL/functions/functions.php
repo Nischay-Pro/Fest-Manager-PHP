@@ -3,22 +3,22 @@ session_start();
 $con=mysqli_connect("localhost","root","060848","pearl_16");
 function getevents(){
 	$con=mysqli_connect("localhost","root","060848","pearl_16");
-$query=mysqli_query($con,"SELECT * FROM event_details NATURAL JOIN pearl_events");
+$query=mysqli_query($con,"SELECT * FROM atmos_events");
 $i=1;
 while($result=mysqli_fetch_array($query)){
 		$id=$result['id'];
-		$Event_id=$result['Event_id'];
-		$Event_date=$result['Event_date'];
+		$Event_id=$result['event_id'];
+		$Event_date=$result['event_date'];
 		$Event_date= date('d-m-Y H:i:s', $Event_date);
 		$Event_venue=$result['Event_venue'];
-		$Roundname=$result['Roundname'];
+		$Roundname=$result['Round'];
 		$Event_name=$result['event_name'];
 		echo "<tr>
 				<td>$i</td>
 				<td ' id='EventName:$id'>$Event_name</td>
-				<td contenteditable='true' id='Roundname:$id'>$Roundname</td>
-				<td contenteditable='true' id='Event_date:$id'>$Event_date</td>
-				<td contenteditable='true' id='Event_venue:$id'>$Event_venue</td>
+				<td contenteditable='false' id='Roundname:$id'>$Roundname</td>
+				<td contenteditable='false' id='Event_date:$id'>$Event_date</td>
+				<td contenteditable='false' id='Event_venue:$id'>$Event_venue</td>
 				</tr>";
 				$i++;
 		
@@ -27,7 +27,11 @@ while($result=mysqli_fetch_array($query)){
 function getWorkshops(){
 	$con=mysqli_connect("localhost","root","060848","pearl_16");
     $club = $_SESSION['controlz_id'];
-$query=mysqli_query($con,"SELECT * FROM event_workshops WHERE `club`='$club' AND isdelete='0'");
+    if(isset($_SESSION['crc_id']))
+    {
+        $club = $_SESSION['crc_id'];
+    }
+$query=mysqli_query($con,"SELECT * FROM event_workshops WHERE isdelete='0'");
 $i=1;
 while($result=mysqli_fetch_array($query)){
 		$id=$result['id'];
@@ -48,10 +52,38 @@ while($result=mysqli_fetch_array($query)){
 	}
 
 }
+
+function getWorkshopsCRC(){
+  $con=mysqli_connect("localhost","root","060848","pearl_16");
+    $club = $_SESSION['controlz_id'];
+    if(isset($_SESSION['crc_id']))
+    {
+        $club = $_SESSION['crc_id'];
+    }
+$query=mysqli_query($con,"SELECT * FROM event_workshops WHERE `club`='$club' AND isdelete='0'");
+$i=1;
+while($result=mysqli_fetch_array($query)){
+    $id=$result['id'];
+    $Event_name=$result['name'];
+    $Event_date=$result['time'];
+        $Event_cost=$result['cost'];
+    $Event_venue=$result['room'];
+    echo "<tr id=\"$id\">
+        <td>$i</td>
+        <td ' id='EventName:$id'>$Event_name</td>
+        <td contenteditable='false' id='datetimepicker'>$Event_date</td>
+        <td contenteditable='false' id='Event_venue:$id'>$Event_venue</td>
+        <td contenteditable='false' id='Event_cost:$id'>$Event_cost</td>
+        </tr>";
+        $i++;
+    
+  }
+
+}
                         
 function getIndiEvents(){
 	$con=mysqli_connect("localhost","root","060848","pearl_16");
-$query=mysqli_query($con,"SELECT * FROM pearl_events");
+$query=mysqli_query($con,"SELECT * FROM atmos_events");
 $i=1;
 while($result=mysqli_fetch_array($query)){
 		$event_id=$result['event_id'];
@@ -112,16 +144,17 @@ while($result=mysqli_fetch_array($query)){
 }
 function getEventDropdown(){
 	$con=mysqli_connect("localhost","root","060848","pearl_16");
-$query=mysqli_query($con,"SELECT * FROM pearl_events ORDER BY event_name ASC");
+$query=mysqli_query($con,"SELECT * FROM atmos_events ORDER BY event_name ASC");
 $i=1;
   echo '<div class="form-group">
-  <select class="form-control" id="sel1" name="Event_id">';
+  <input type="text" list="eventlist" class="form-control" id="sel1" name="Event_id"/>
+  <datalist id="eventlist">';
   while($result=mysqli_fetch_array($query)){
     $name=$result['event_name'];
     $event_id=$result['event_id'];
     echo '<option id="'.$event_id.'" value="'.$event_id.'">'.$name.'</option>';
   }
- echo '</select></div>';
+ echo '</datalist></div>';
 }
 function getIndiParticipants(){
 	$con=mysqli_connect("localhost","root","060848","pearl_16");

@@ -5,6 +5,7 @@ if(!isset($_SESSION['controlz_id'])){
   echo "<script>window.open('login.php','_self')</script>";
 }
 else{
+    //echo "<script>window.open('workshop.php','_self')</script>";
   // start controlz work here
 }
 
@@ -19,60 +20,35 @@ else{
     <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 <link type="text/css" rel="stylesheet" href="../bootstrap-3.2.0-dist/css/bootstrap.css">
 <link type="text/css" rel="stylesheet" href="css/style.css">
-<link type="text/css" rel="stylesheet" href="../../css/sweetalert.css">
-<script type="text/javascript" src="../../js/sweetalert.min.js"></script>
 <script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="../bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
 <style type="text/css">
  .space{
     width:100%;
     height: 50px;
-  }
-  .danger{
-    background: red !important;
-  }
-
-  </style>
+  }</style>
 <script>
 $(document).ready(function(){
-	
+  
     $(function(){
-	//acknowledgement message
+  //acknowledgement message
     var message_status = $("#status");
-    $("td[contenteditable=false]").blur(function(){
+    $("td[contenteditable=true]").blur(function(){
         var field_userid = $(this).attr("id") ;
         var value = $(this).text() ;
         $.post('ajax.php' , field_userid + "=" + value, function(data){
             if(data != '')
-			{
-				message_status.show();
-				message_status.text(data);
-				//hide the message
-				setTimeout(function(){message_status.hide()},3000);
-			}
+      {
+        message_status.show();
+        message_status.text(data);
+        //hide the message
+        setTimeout(function(){message_status.hide()},3000);
+      }
         });
     });
 });
-	
+  
 });
-
-function editMe(row){
-  swal({
-  title: 'Delete this workshop?',
-  text: 'Let the people live. Say yas.',
-  type: 'warning',
-  showCancelButton: true,
-  closeOnConfirm: true,
-  disableButtonsOnConfirm: true,
-  confirmLoadingButtonColor: '#DD6B55'
-}, function(isConfirm){
-  if(isConfirm){
-    var val = document.getElementById('EventName:'+row.id).innerHTML;
-    document.getElementById('my-fucking-name').value=val;
-    document.getElementById('my-fucking-form').submit();
-  }
-});
-}
 
 </script>
 
@@ -80,11 +56,15 @@ function editMe(row){
 <body>
 <nav>
  <ul class="navigbar">
-  <li><a href="index.php">Controlz Panel :P</a></li>
-  <li><a href="event.php">Back To Events</a></li>
-  <li><a href="addusersevent.php">Add Users</a></li>
+  <li><a href="event.php">Events</a></li>
+  <li><a href="send_notification.php">Send Notification</a></li>
+ 
+    <li><a href="workshop.php">Workshops</a></li>
+  <li><a href="#">Team</a></li>
+
   <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
+ </ul>
 </nav>
 <div class="space"></div>
 <div class="container"><br>
@@ -95,26 +75,20 @@ function editMe(row){
 <thead>
       <tr>
       <th>Sr No</th>
-        <th>User ID</th>
         <th>Event Name</th>
-        <th>Coupon Applied?</th>
+        <th>Event Round</th>
+        <th>Event Date</th>
+        <th>Event Venue</th>
       </tr>
     </thead>
      <tbody>
-  	<?php getusers();
-  	?>
+    <?php getevents();
+    ?>
   </tbody>
 </table>
 
-
-
 </div>
 </div>
-
-<form class="form-horizontal" action="workshopcall.php" role="form" method="GET" id="my-fucking-form">
-    <input type="hidden" name="action" value="deleteEvent"/>
-    <input type="hidden" name="name" value="" id="my-fucking-name"/>
-</form>
 
 </body>
 </html>
