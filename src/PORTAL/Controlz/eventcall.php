@@ -120,7 +120,12 @@ else{
 }
 
 }
+elseif($_GET['action']=='getGeneralCount'){
+    $userid = mysqli_real_escape_string($con,$_GET['userid']);
+    $query=mysqli_query($con,"SELECT * FROM atmos_e");
+}
 else{
 	echo "Direct Access is denied";
 }
+
 ?>

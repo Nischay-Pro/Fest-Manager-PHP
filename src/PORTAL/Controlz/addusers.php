@@ -10,7 +10,7 @@ else{
 ?>
 <html>
 <head>
-<title>Website</title>
+<title>Add User To Workshop</title>
 <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 <link type="text/css" rel="stylesheet" href="../bootstrap-3.2.0-dist/css/bootstrap.css">
 <link type="text/css" rel="stylesheet" href="../../css/sweetalert.css">
@@ -25,7 +25,6 @@ else{
     height: 50px;
   }</style>
 </head>
-<body>
 <body>
 <nav>
  <ul class="navigbar">
@@ -57,7 +56,14 @@ else{
                     </div>
                   </div>
                   <div class="form-group">
-                    <input class="col-sm-6 btn btn-lg btn-success" onclick="checkCoupon()" value="Check and Apply Coupon" name="register" >
+                    <input class="col-sm-6 btn btn-lg btn-success" onclick="checkCost()" value="Check Availability and Cost">
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control"
+                            id="cost-holder" disabled placeholder="Calculate Cost"/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input class="col-sm-6 btn btn-lg btn-success" onclick="checkCoupon()" value="Check and Apply Coupon">
                     <div class="col-sm-6">
                         <input type="text" class="form-control"
                             id="coupon" disabled placeholder="Coupon Not Applied (default)."/>
@@ -81,7 +87,54 @@ $(document).ready(function(){
       allowTimes:['09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00']
     });
   });
+
+  var request= new XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var dat = JSON.parse(this.responseText);
+      
+    }
+  };
+
 });
+
+function checkCost(){
+  var workshopid = document.getElementById('sel1').value;
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var dat = JSON.parse(this.responseText);
+      
+      
+      if(dat.message){
+        swal({
+          title: 'Add Coupon?',
+          text: 'Only one coupon, mofo. Use wisely.',
+          type: 'info',
+          showCancelButton: true,
+          closeOnConfirm: true,
+          disableButtonsOnConfirm: true,
+          confirmLoadingButtonColor: '#DD6B55'
+        }, function(isConfirm){
+          if(isConfirm){
+            document.getElementById('coupon').value="Coupon Applied.";
+            document.getElementById('coupon-hidden').value=1;
+          }
+          else{
+            document.getElementById('coupon').value="Coupon Not Applied.";
+            document.getElementById('coupon-hidden').value=0;
+          }
+        });
+      }
+      else{
+          document.getElementById('coupon').value="Coupon Not Available.";
+          document.getElementById('coupon-hidden').value=0;
+      }
+    }
+  };
+  request.open("GET", "workshopcall.php?action=getDataWorkshop&id="+workshopid, true);
+  request.send();
+}
 
 function checkCoupon(){
   var user = document.getElementById('part-id').value;

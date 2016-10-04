@@ -1,0 +1,31 @@
+
+#accommodation-step{margin:0;padding:0;}
+#accommodation-step li{list-style:none; float:left;padding:5px 10px;border-top:#EEE 1px solid;border-left:#EEE 1px solid;border-right:#EEE 1px solid;}
+#accommodation-step li.highlight{background-color:#EEE;}
+#accommodation-form{clear:both;border:1px #EEE solid;padding:20px;}
+.demoInputBox{padding: 10px;border: #F0F0F0 1px solid;border-radius: 4px;background-color: #FFF;width: 50%;font-weight:bold}
+.accommodation-error{color:#FF0000; padding-left:15px;}
+.message {color: #00FF00;font-weight: bold;width: 100%;padding: 10;}
+.btnAction{padding: 5px 10px;background-color: #09F;border: 0;color: #FFF;cursor: pointer; margin-top:15px;}
+#refund{padding-top:-5px;}
+#pid{cursor:pointer;cursor:hand;}
+.navigbar{
+  font-family: 'Slabo 27px', serif;
+  width:100%;
+  color:white;
+  background:black;
+  height:5%;
+  position:fixed;
+}
+.navigbar li{
+  font-family: 'Slabo 27px', serif;
+  list-style:none;
+  display: inline-block;
+}
+.navigbar li a{
+  font-family: 'Slabo 27px', serif;
+  text-decoration: none;
+  color:white;
+  padding:2em 0.5em;
+  font-size:1.5em;
+}

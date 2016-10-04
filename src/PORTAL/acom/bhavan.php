@@ -3,7 +3,7 @@
 		$room=array();
 		if($con)
 		{
-			$sql="select * from Rooms";
+			$sql="select * from rooms";
 			$result=mysqli_query($con,$sql);
 			if (mysqli_num_rows($result) > 0) {
 				while($row = mysqli_fetch_assoc($result)) {	

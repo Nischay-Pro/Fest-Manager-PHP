@@ -31,7 +31,7 @@ function getWorkshops(){
     {
         $club = $_SESSION['crc_id'];
     }
-$query=mysqli_query($con,"SELECT * FROM event_workshops WHERE `club`='$club' AND isdelete='0'");
+$query=mysqli_query($con,"SELECT * FROM event_workshops WHERE isdelete='0'");
 $i=1;
 while($result=mysqli_fetch_array($query)){
 		$id=$result['id'];
