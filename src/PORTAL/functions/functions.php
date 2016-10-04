@@ -37,15 +37,16 @@ while($result=mysqli_fetch_array($query)){
 		$id=$result['id'];
 		$Event_name=$result['name'];
 		$Event_date=$result['time'];
-        $Event_cost=$result['cost'];
+    $Event_cost_general=$result['cost_general'];
+    $Event_cost_bits=$result['cost_bits'];
 		$Event_venue=$result['room'];
-		echo "<tr onclick=\"editMe(this)\" id=\"$id\">
+		echo "<tr id=\"$id\">
 				<td>$i</td>
-				<td ' id='EventName:$id'>$Event_name</td>
+				<td contenteditable='false' ' id='EventName:$id'>$Event_name</td>
 				<td contenteditable='false' id='datetimepicker'>$Event_date</td>
 				<td contenteditable='false' id='Event_venue:$id'>$Event_venue</td>
-        <td contenteditable='false' id='Event_cost:$id'>$Event_cost</td>
-        <td class='danger' contenteditable='false' onclick='editMe(this)'' id='$id'>DELETE</td>
+        <td contenteditable='false' id='Event_cost:$id'>$Event_cost_bits</td>
+        <td contenteditable='false' id='Event_cost:$id'>$Event_cost_general</td>
 				</tr>";
 				$i++;
 		
@@ -115,8 +116,6 @@ function getUsers(){
     $club = $_SESSION['controlz_id'];
 $query=mysqli_query($con,"SELECT userid,event_workshops.name,event_workshops_participants.id,event_workshops_participants.is_coupon FROM event_workshops_participants,event_workshops WHERE `isdelete`='0' AND event_workshops.id = event_workshops_participants.eventid AND event_workshops.club = '$club' AND event_workshops.isdelete=0 AND event_workshops_participants.is_delete=0");
 $i=1;
-  echo '<div class="form-group">
-  <select class="form-control" id="sel1" name="workshopid">';
 while($result=mysqli_fetch_array($query)){
 		$id=$result['id'];
 		$Event_userid=$result['userid'];
@@ -140,7 +139,6 @@ while($result=mysqli_fetch_array($query)){
 				$i++;
 		
 	}
- echo '</select></div>';
 }
 function getEventDropdown(){
 	$con=mysqli_connect("localhost","root","060848","pearl_16");

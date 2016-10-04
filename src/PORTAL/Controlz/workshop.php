@@ -80,8 +80,7 @@ function editMe(row){
 <body>
 <nav>
  <ul class="navigbar">
-      <li><a href="index.php">Controlz Panel :P</a></li>
-  <li><a href="addworkshop.php">Add Workshop</a></li>
+      <li><a href="index.php">Back to Events Dashboard</a></li>
   <li><a href="addusers.php">Add Users</a></li>
   <li><a href="users.php">See Registered Users</a></li>
   <li style="float:right"><a href="logout.php">Log Out</a></li>
@@ -100,7 +99,8 @@ function editMe(row){
         <th>Workshop Name</th>
         <th>Workshop Time</th>
         <th>Workshop Room</th>
-        <th>Workshop Cost</th>
+        <th>Bitsian Cost</th>
+        <th>Outsider Cost</th>
       </tr>
     </thead>
      <tbody>
