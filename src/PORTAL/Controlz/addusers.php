@@ -28,7 +28,7 @@ else{
 <body>
 <nav>
  <ul class="navigbar">
- <li><a href="index.php">Controlz Panel :P</a></li>
+ <li><a href="index.php">Events Dashboard</a></li>
   <li><a href="workshop.php">Back to Workshop Dashboard</a></li>
   <li><a href="users.php">See Registered Users</a></li>
   <li style="float:right"><a href="logout.php">Log Out</a></li>
@@ -180,7 +180,7 @@ function checkCoupon(){
     request.send();
   }
   else {
-    document.getElementById('coupon').value="Workshop Cost < Rs 150";
+    document.getElementById('coupon').value="Coupon Not Applied. Workshop is Cheaper than 150.";
     document.getElementById('coupon-hidden').value=0;
   }
   

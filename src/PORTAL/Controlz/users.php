@@ -80,7 +80,7 @@ function editMe(row){
 <body>
 <nav>
  <ul class="navigbar">
-  <li><a href="index.php">Controlz Panel :P</a></li>
+  <li><a href="index.php">Events Dashboard</a></li>
   <li><a href="workshop.php">Back To Workshops</a></li>
   <li><a href="addusers.php">Add Users</a></li>
   <li style="float:right"><a href="logout.php">Log Out</a></li>
