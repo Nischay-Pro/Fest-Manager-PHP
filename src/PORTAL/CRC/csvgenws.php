@@ -60,7 +60,7 @@ if(isset($_GET['reg_list'])){
     $result = mysqli_query($con,$query);
     $i = 1;
     while ($row=mysqli_fetch_assoc($result)){
-        $final_row = array('S.no',$row['pearl_id'], $row['name'], $row['email'], $row['college'],
+        $final_row = array($i,$row['pearl_id'], $row['name'], $row['email'], $row['college'],
             $row['phone'], $row['updated_at']);
         fputcsv($output, $final_row);
         $i = $i + 1;
@@ -76,13 +76,9 @@ if(isset($_GET['acco_list'])){
     $query="SELECT * FROM accomodation";
     $result = mysqli_query($con,$query);
     while ($row=mysqli_fetch_assoc($result)){
-        $final_row = array('S.no',$row['Pearl_Id'], $row['StartDate'], $row['EndDate'], $row['NoofDays'],$row['Bhavan'],$row['Cost'],
+        $final_row = array($i,$row['Pearl_Id'], $row['StartDate'], $row['EndDate'], $row['NoofDays'],$row['Bhavan'],$row['Cost'],
             $row['Refund'], $row['Updated_At']);
         fputcsv($output, $final_row);
         $i = $i + 1;
     }
-}
-else
-{
-    die('Please select the Workshop');
 }
