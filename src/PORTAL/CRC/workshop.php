@@ -53,8 +53,9 @@ else{
       <th>Sr No</th>
         <th>Workshop Name</th>
         <th>Workshop Time</th>
+        <th>Workshop Cost General</th>
+          <th>Workshop Cost Bitsian</th>
         <th>Workshop Room</th>
-        <th>Workshop Cost</th>
       </tr>
     </thead>
      <tbody>

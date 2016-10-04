@@ -75,6 +75,7 @@ if(isset($_GET['acco_list'])){
     fputcsv($output, array('S.no', 'Atmos_id', 'StartDate', 'EndDate', 'Days', 'Bhavan', 'Cost', 'Refund', 'Accommodated On'));
     $query="SELECT * FROM accomodation";
     $result = mysqli_query($con,$query);
+    $i = 1;
     while ($row=mysqli_fetch_assoc($result)){
         $final_row = array($i,$row['Pearl_Id'], $row['StartDate'], $row['EndDate'], $row['NoofDays'],$row['Bhavan'],$row['Cost'],
             $row['Refund'], $row['Updated_At']);
