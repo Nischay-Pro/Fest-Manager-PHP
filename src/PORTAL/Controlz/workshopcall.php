@@ -40,9 +40,11 @@ if ($con->query($sql) === TRUE) {
 }
 }
 elseif($_GET['action']=='registerUser'){
-$userid = strtolower(mysqli_real_escape_string($con,$_GET['userid']));
+$userid = strtolower(mysqli_real_escape_string($con,$_GET['userid'])) . 'h';
 $eventid = mysqli_real_escape_string($con,$_GET['workshopid']);
 $iscoupon = mysqli_real_escape_string($con,$_GET['iscoupon']);
+$cost = mysqli_real_escape_string($con,$_GET['event-cost']);
+$outsider = mysqli_real_escape_string($con,$_GET['outsider']);
 $club = $_SESSION['controlz_id'];
 $check_user=mysqli_query($con,"SELECT * FROM event_workshops_participants WHERE eventid='$eventid' AND is_delete='0' AND userid='$userid'");
 $rows=mysqli_num_rows($check_user);
@@ -109,7 +111,7 @@ if ($con->query($sql) === TRUE) {
 }
 }
 elseif($_GET['action']=='checkCouponUser'){
-$userid = mysqli_real_escape_string($con,$_GET['userid']);
+$userid = mysqli_real_escape_string($con,$_GET['userid']) . 'h';
 $check_user=mysqli_query($con,"SELECT * FROM couponusers WHERE bitsid='$userid' AND couponused='0'");
 $rows=mysqli_num_rows($check_user);
 if($rows>0){

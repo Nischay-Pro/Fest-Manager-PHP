@@ -120,9 +120,23 @@ else{
 }
 
 }
-elseif($_GET['action']=='getGeneralCount'){
-    $userid = mysqli_real_escape_string($con,$_GET['userid']);
-    $query=mysqli_query($con,"SELECT * FROM atmos_e");
+elseif($_GET['action']=='getDataWorkshop'){
+    $userid = mysqli_real_escape_string($con,$_GET['id']);
+    $query=mysqli_query($con,"SELECT * FROM atmos_events WHERE `id`='$userid'");
+    $row=mysqli_fetch_array($query);
+    $json[]= array(
+        'cost_general' => $row['cost_general'],
+        'cost_bits' => $row['cost_bits'],
+        'max_count_general' => $row['max_count_general'],
+        'max_count_bits' => $row['max_count_bits'],
+        'current_count_bits' => $row['current_count_bits'],
+        'current_count_general' => $row['current_count_general']
+    );
+    $jsonstring = json_encode($json);
+ echo $jsonstring;
+}
+else{
+	echo "Direct Access is denied";
 }
 else{
 	echo "Direct Access is denied";

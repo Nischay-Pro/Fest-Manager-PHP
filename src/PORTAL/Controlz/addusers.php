@@ -39,6 +39,7 @@ else{
 <div class="space"></div>
 <form class="form-horizontal" action="workshopcall.php" role="form" method="GET">
               <input type="hidden" name="action" value="registerUser">
+              <input type="hidden" name="outsider" id="outsider">
               <input type="hidden" name="iscoupon" id="coupon-hidden" value="0">
                   <div class="form-group">
                     <label  class="col-sm-2 control-label"
@@ -58,7 +59,7 @@ else{
                   <div class="form-group">
                     <input class="col-sm-6 btn btn-lg btn-success" onclick="checkCost()" value="Check Availability and Cost">
                     <div class="col-sm-6">
-                        <input type="text" class="form-control"
+                        <input type="text" class="form-control" name="event-cost"
                             id="cost-holder" disabled placeholder="Calculate Cost"/>
                     </div>
                   </div>
@@ -72,7 +73,7 @@ else{
                                    
       </div>
       
-        <input class="btn btn-lg btn-success col-sm-6" style="margin-left:25vw" type="submit" value="Add User" name="register" >
+        <input id="submit-button" class="btn btn-lg btn-success col-sm-6" style="margin-left:25vw; display: none" type="submit" value="Add User" name="register">
       </div>
       </form>
       </div>
@@ -88,14 +89,6 @@ $(document).ready(function(){
     });
   });
 
-  var request= new XMLHttpRequest();
-  request.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var dat = JSON.parse(this.responseText);
-      
-    }
-  };
-
 });
 
 function checkCost(){
@@ -104,32 +97,45 @@ function checkCost(){
   request.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var dat = JSON.parse(this.responseText);
-      
-      
-      if(dat.message){
-        swal({
-          title: 'Add Coupon?',
-          text: 'Only one coupon, mofo. Use wisely.',
-          type: 'info',
-          showCancelButton: true,
-          closeOnConfirm: true,
-          disableButtonsOnConfirm: true,
-          confirmLoadingButtonColor: '#DD6B55'
-        }, function(isConfirm){
-          if(isConfirm){
-            document.getElementById('coupon').value="Coupon Applied.";
-            document.getElementById('coupon-hidden').value=1;
-          }
-          else{
-            document.getElementById('coupon').value="Coupon Not Applied.";
-            document.getElementById('coupon-hidden').value=0;
-          }
-        });
+      //var dat = this.responseText;
+      dat = dat[0];
+      console.log(dat);
+      var user = document.getElementById('part-id').value;
+      userval = user.match(/[fhFH](20)\d{5}/g);
+      var outsider = true;
+      if (userval != null && user.length==8){
+        outsider = false;
       }
-      else{
-          document.getElementById('coupon').value="Coupon Not Available.";
-          document.getElementById('coupon-hidden').value=0;
+      var seats;
+      var cost;
+      var message;
+      var status;
+      if(outsider){
+        seats = dat.max_count_general - dat.current_count_general;
+        cost = dat.cost_general;
       }
+      if(!outsider){
+        seats = dat.max_count_bits - dat.current_count_bits;
+        cost = dat.cost_bits;
+      }
+      message = seats>0 ? seats + " seats available. Pay Rs " + cost + ". Continue?": "No seats available.";
+      status = seats>0 ? "success" : "error";
+      title = outsider ? "Status for Outsider." : "Status for Bitsian.";
+
+      swal({
+        title: title,
+        text: message,
+        type: status,
+        confirmButtonText: "Okay!",
+        showCancelButton: true,
+        closeOnConfirm: true,
+      },function(isConfirm){
+        if(isConfirm && seats>0){
+          document.getElementById('cost-holder').value=cost;
+          document.getElementById('outsider').value=outsider?1:0;
+          document.getElementById('submit-button').style.display = "block";
+        }
+      });
     }
   };
   request.open("GET", "workshopcall.php?action=getDataWorkshop&id="+workshopid, true);
@@ -138,38 +144,46 @@ function checkCost(){
 
 function checkCoupon(){
   var user = document.getElementById('part-id').value;
-  var request = new XMLHttpRequest();
-  request.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var dat = JSON.parse(this.responseText);
-      if(dat.message){
-        swal({
-          title: 'Add Coupon?',
-          text: 'Only one coupon, mofo. Use wisely.',
-          type: 'info',
-          showCancelButton: true,
-          closeOnConfirm: true,
-          disableButtonsOnConfirm: true,
-          confirmLoadingButtonColor: '#DD6B55'
-        }, function(isConfirm){
-          if(isConfirm){
-            document.getElementById('coupon').value="Coupon Applied.";
-            document.getElementById('coupon-hidden').value=1;
-          }
-          else{
-            document.getElementById('coupon').value="Coupon Not Applied.";
+  var costholder = document.getElementById('cost-holder');
+  if(costholder.value>150){
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var dat = JSON.parse(this.responseText);
+        if(dat.message){
+          swal({
+            title: 'Add Coupon?',
+            text: 'Only one coupon, mofo. Use wisely.',
+            type: 'info',
+            showCancelButton: true,
+            closeOnConfirm: true,
+            disableButtonsOnConfirm: true,
+            confirmLoadingButtonColor: '#DD6B55'
+          }, function(isConfirm){
+            if(isConfirm){
+              document.getElementById('coupon').value="Coupon Applied.";
+              document.getElementById('coupon-hidden').value=1;
+            }
+            else{
+              document.getElementById('coupon').value="Coupon Not Applied.";
+              document.getElementById('coupon-hidden').value=0;
+            }
+          });
+        }
+        else{
+            document.getElementById('coupon').value="Coupon Not Available.";
             document.getElementById('coupon-hidden').value=0;
-          }
-        });
+        }
       }
-      else{
-          document.getElementById('coupon').value="Coupon Not Available.";
-          document.getElementById('coupon-hidden').value=0;
-      }
-    }
-  };
-  request.open("GET", "workshopcall.php/?action=checkCouponUser&userid="+user, true);
-  request.send();
+    };
+    request.open("GET", "workshopcall.php/?action=checkCouponUser&userid="+user, true);
+    request.send();
+  }
+  else {
+    document.getElementById('coupon').value="Workshop Cost < Rs 150";
+    document.getElementById('coupon-hidden').value=0;
+  }
+  
 }
 
 </script>

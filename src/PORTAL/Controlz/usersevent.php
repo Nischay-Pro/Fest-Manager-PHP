@@ -39,7 +39,7 @@ $(document).ready(function(){
     $(function(){
 	//acknowledgement message
     var message_status = $("#status");
-    $("td[contenteditable=true]").blur(function(){
+    $("td[contenteditable=false]").blur(function(){
         var field_userid = $(this).attr("id") ;
         var value = $(this).text() ;
         $.post('ajax.php' , field_userid + "=" + value, function(data){
@@ -85,7 +85,6 @@ function editMe(row){
   <li><a href="addusersevent.php">Add Users</a></li>
   <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
- </ul>
 </nav>
 <div class="space"></div>
 <div class="container"><br>
