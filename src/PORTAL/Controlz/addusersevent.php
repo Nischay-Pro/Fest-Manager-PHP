@@ -55,15 +55,7 @@ else{
                         <input type="text" class="form-control"
                             id="part-id" name="userid" placeholder="Enter Participant ID"/>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <input class="col-sm-6 btn btn-lg btn-success" onclick="checkCoupon()" value="Check and Apply Coupon" name="register" >
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control"
-                            id="coupon" disabled placeholder="Coupon Not Applied (default)."/>
-                    </div>
-                  </div>
-                                   
+                  </div>           
       </div>
       
         <input class="btn btn-lg btn-success col-sm-6" style="margin-left:25vw" type="submit" value="Add User" name="register" >
@@ -82,42 +74,6 @@ $(document).ready(function(){
     });
   });
 });
-
-function checkCoupon(){
-  var user = document.getElementById('part-id').value;
-  var request = new XMLHttpRequest();
-  request.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var dat = JSON.parse(this.responseText);
-      if(dat.message){
-        swal({
-          title: 'Add Coupon?',
-          text: 'Only one coupon, mofo. Use wisely.',
-          type: 'info',
-          showCancelButton: true,
-          closeOnConfirm: true,
-          disableButtonsOnConfirm: true,
-          confirmLoadingButtonColor: '#DD6B55'
-        }, function(isConfirm){
-          if(isConfirm){
-            document.getElementById('coupon').value="Coupon Applied.";
-            document.getElementById('coupon-hidden').value=1;
-          }
-          else{
-            document.getElementById('coupon').value="Coupon Not Applied.";
-            document.getElementById('coupon-hidden').value=0;
-          }
-        });
-      }
-      else{
-          document.getElementById('coupon').value="Coupon Not Available.";
-          document.getElementById('coupon-hidden').value=0;
-      }
-    }
-  };
-  request.open("GET", "workshopcall.php/?action=checkCouponUser&userid="+user, true);
-  request.send();
-}
 
 </script>
 <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
