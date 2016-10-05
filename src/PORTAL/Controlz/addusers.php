@@ -42,10 +42,26 @@ else{
               <input type="hidden" name="outsider" id="outsider">
               <input type="hidden" name="iscoupon" id="coupon-hidden" value="0">
                   <div class="form-group">
-                    <label  class="col-sm-4 control-label"
+                    <label  class="col-sm-5 control-label"
                               for="sel1">Workshop Name</label>
-                    <div class="col-sm-8">
+                    <div class="col-sm-7">
                         <?php getWorkshopDropdown(); ?>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-9 control-label"
+                              for="sel1">Bitsian Vacancies Available</label>
+                    <div class="col-sm-3">
+                      <input type="text" class="form-control" name="event-cost"
+                            id="bitsian-holder" disabled placeholder=""/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-9 control-label"
+                              for="sel1">Outsider Vacancies Available</label>
+                    <div class="col-sm-3">
+                      <input type="text" class="form-control" name="event-cost"
+                            id="outsider-holder" disabled placeholder=""/>
                     </div>
                   </div>
                   <div class="form-group">
@@ -73,12 +89,14 @@ else{
                                    
       </div>
       
-        <input id="submit-button" class="btn btn-lg btn-success col-sm-6" style="margin-left:25vw; display: none" type="submit" value="Add User" name="register">
+        <input id="submit-button" disabled="true" class="btn btn-lg btn-success col-sm-6" style="margin-left:25vw;" type="submit" value="Add User" name="register">
       </div>
       </form>
       </div>
 <script type="text/javascript">
+var currentworkshop = {};
 $(document).ready(function(){
+  updateData(document.getElementById('sel1'));
   $('#datetimepicker').click(function(){
     $(this).datetimepicker({
       lang:'en',
@@ -91,8 +109,9 @@ $(document).ready(function(){
 
 });
 
-function checkCost(){
-  var workshopid = document.getElementById('sel1').value;
+function updateData(select){
+  var workshopobject = select.options[select.selectedIndex];
+  var workshopid = workshopobject.value;
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -100,42 +119,9 @@ function checkCost(){
       //var dat = this.responseText;
       dat = dat[0];
       console.log(dat);
-      var user = document.getElementById('part-id').value;
-      userval = user.match(/[fhFH](20)\d{5}/g);
-      var outsider = true;
-      if (userval != null && user.length==8){
-        outsider = false;
-      }
-      var seats;
-      var cost;
-      var message;
-      var status;
-      if(outsider){
-        seats = dat.max_count_general - dat.current_count_general;
-        cost = dat.cost_general;
-      }
-      if(!outsider){
-        seats = dat.max_count_bits - dat.current_count_bits;
-        cost = dat.cost_bits;
-      }
-      message = seats>0 ? seats + " seats available. Pay Rs " + cost + ". Continue?": "No seats available.";
-      status = seats>0 ? "success" : "error";
-      title = outsider ? "Status for Outsider." : "Status for Bitsian.";
-
-      swal({
-        title: title,
-        text: message,
-        type: status,
-        confirmButtonText: "Okay!",
-        showCancelButton: true,
-        closeOnConfirm: true,
-      },function(isConfirm){
-        if(isConfirm && seats>0){
-          document.getElementById('cost-holder').value=cost;
-          document.getElementById('outsider').value=outsider?1:0;
-          document.getElementById('submit-button').style.display = "block";
-        }
-      });
+      currentworkshop = dat;
+      document.getElementById('bitsian-holder').value = currentworkshop.max_count_bits - currentworkshop.current_count_bits;
+      document.getElementById('outsider-holder').value = currentworkshop.max_count_general - currentworkshop.current_count_general;
     }
   };
   request.open("GET", "workshopcall.php?action=getDataWorkshop&id="+workshopid, true);
@@ -185,6 +171,52 @@ function checkCoupon(){
   }
   
 }
+
+var inputfield = document.getElementById('part-id');
+inputfield.addEventListener("keyup", function(){
+  var partid = inputfield.value;
+  var button = document.getElementById('submit-button');
+  var partidval = partid.match(/[fhFH](20)\d{5}/g);
+  var valid = false;
+  var outsider = true;
+  if (partidval != null && partid.length==8){
+    outsider = false;
+    valid = true;
+  }
+  if(partid.startsWith('ATMH')){
+    outsider = true;
+    valid = true;
+  }
+  if(partid.length == 0){
+    inputfield.style.background = "#ffffff";
+    document.getElementById('cost-holder').value=0;
+    return;
+  }
+  if(!valid){
+    inputfield.style.background = "#ffaaaa";
+    button.disabled = true;
+    document.getElementById('cost-holder').value=0;
+    return;
+  }
+  button.disabled = false;
+  var seats = outsider? document.getElementById('outsider-holder').value : document.getElementById('bitsian-holder').value;
+  var cost = outsider? currentworkshop.cost_general : currentworkshop.cost_bits;
+  if(seats == 0){
+    button.disabled = true;
+    inputfield.style.background = "#eeee55";
+    return;
+  }
+  document.getElementById('outsider').value=outsider?1:0;
+  document.getElementById('cost-holder').value=cost;
+  if(outsider){
+    inputfield.style.background = "#aaeebb";
+    return;
+  }
+  if(!outsider){
+    inputfield.style.background = "#aaccdd";
+    return;
+  }
+}); 
 
 </script>
 <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >

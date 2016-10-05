@@ -70,6 +70,14 @@ $run=mysqli_query($con,"INSERT INTO event_workshops_participants(`userid`,`event
       $sql = "UPDATE event_credentials SET collection=collection+$tcost WHERE organiser_id='$club'";
         $con->query($sql);
       }
+      if($outsider=='1'){
+      $sql = "UPDATE event_workshops SET current_count_general=current_count_general+1 WHERE id='$eventid'";
+          $con->query($sql);
+      }
+      else{
+      $sql = "UPDATE event_workshops SET current_count_bits=current_count_bits+1 WHERE id='$eventid'";
+        $con->query($sql);
+      }
     //echo '{"message" : "success"}';
       echo "<script>window.open('addusers.php','_self')</script>";
   } else {

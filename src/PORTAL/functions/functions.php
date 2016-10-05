@@ -103,7 +103,7 @@ function getWorkshopDropdown(){
 $query=mysqli_query($con,"SELECT * FROM event_workshops WHERE `isdelete`='0' AND `club` = '$club'");
 $i=1;
   echo '<div class="form-group">
-  <select class="form-control" id="sel1" name="workshopid">';
+  <select class="form-control" id="sel1" name="workshopid" onChange="updateData(this)">';
   while($result=mysqli_fetch_array($query)){
     $name=$result['name'];
     $event_id=$result['id'];

@@ -41,19 +41,28 @@ if ($con->query($sql) === TRUE) {
 }
 elseif($_GET['action']=='registerUser'){
 $userid = strtolower(mysqli_real_escape_string($con,$_GET['userid']));
-$eventid = mysqli_real_escape_string($con,$_GET['workshopid']);
+$eventid = mysqli_real_escape_string($con,$_GET['Event_id']);
 $iscoupon = mysqli_real_escape_string($con,$_GET['iscoupon']);
+$outsider = mysqli_real_escape_string($con,$_GET['outsider']);
 $club = $_SESSION['controlz_id'];
-$check_user=mysqli_query($con,"SELECT * FROM event_participants WHERE eventid='$eventid' AND is_delete='0' AND userid='$userid'");
+$check_user=mysqli_query($con,"SELECT * FROM event_participants WHERE event_id='$eventid' AND isdelete='0' AND pearl_id='$userid'");
 $rows=mysqli_num_rows($check_user);
 if($rows>0){
     	echo '{"message" : "User Already Added"}';
 }
 else{
     // "INSERT INTO event_workshops_participants(`userid`,`eventid`,`is_coupon`) VALUES('$userid','$eventid','$iscoupon')";
-$run=mysqli_query($con,"INSERT INTO event_participants(`pearl_id`,`event_id`) VALUES('$userid','$eventid','$iscoupon')");
+$run=mysqli_query($con,"INSERT INTO event_participants(`pearl_id`,`event_id`,`uploaded_by`) VALUES('$userid','$eventid','$club')");
   if($run){
-      $loadevent=mysqli_query($con,"SELECT * FROM atmos_events AND isdelete='0' AND id='$eventid'");
+      if($outsider=='1'){
+      $sql = "UPDATE atmos_events SET current_count_general=current_count_general+1 WHERE event_id='$eventid'";
+          
+          $con->query($sql);
+      }
+      else{
+      $sql = "UPDATE atmos_events SET current_count_bits=current_count_bits+1 WHERE event_id='$eventid'";
+        $con->query($sql);
+      }
       //while ($row = mysqli_fetch_row($loadevent)) {
       //  $cost = $row['cost'];
     //}
