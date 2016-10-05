@@ -73,14 +73,15 @@ else{
                     </div>
                   </div>
                   <div class="form-group">
-                    <input class="col-sm-6 btn btn-lg btn-success" onclick="checkCost()" value="Check Availability and Cost">
+                    <label  class="col-sm-6 control-label"
+                              for="sel1">Workshop Cost</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="event-cost"
                             id="cost-holder" disabled placeholder="Calculate Cost"/>
                     </div>
                   </div>
                   <div class="form-group">
-                    <input class="col-sm-6 btn btn-lg btn-success" onclick="checkCoupon()" value="Check and Apply Coupon">
+                    <input id="coupon-button" class="col-sm-6 btn btn-lg btn-success" onclick="checkCoupon()" value="Check and Apply Coupon">
                     <div class="col-sm-6">
                         <input type="text" class="form-control"
                             id="coupon" disabled placeholder="Coupon Not Applied (default)."/>
@@ -148,7 +149,10 @@ function checkCoupon(){
           }, function(isConfirm){
             if(isConfirm){
               document.getElementById('coupon').value="Coupon Applied.";
+              //TODO toastr
+              document.getElementById('cost-holder').value-=150;
               document.getElementById('coupon-hidden').value=1;
+              document.getElementById('coupon-button').disabled=true;
             }
             else{
               document.getElementById('coupon').value="Coupon Not Applied.";
