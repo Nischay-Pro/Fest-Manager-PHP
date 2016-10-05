@@ -120,6 +120,12 @@ inputfield.addEventListener("keyup", function(){
     return;
   }
   button.disabled = false;
+  var seats = outsider? document.getElementById('outsider-holder').value : document.getElementById('bitsian-holder').value;
+  if(seats == 0){
+    button.disabled = true;
+    inputfield.style.background = "#eeee55";
+    return;
+  }
   document.getElementById('outsider').value=outsider?1:0;
   if(outsider){
     inputfield.style.background = "#aaeebb";
