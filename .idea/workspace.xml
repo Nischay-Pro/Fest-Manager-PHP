@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e34cc6b0-a79a-4d4a-864a-cb22b9774309" name="Default" comment="">
+    <list default="true" id="e1a88392-d5b0-41d7-9d62-3cc4e62ffaea" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PORTAL/CRC/csvgenws.php" afterPath="$PROJECT_DIR$/src/PORTAL/CRC/csvgenws.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PORTAL/CRC/eventusers.php" afterPath="$PROJECT_DIR$/src/PORTAL/CRC/eventusers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PORTAL/CRC/functions/functions.php" afterPath="$PROJECT_DIR$/src/PORTAL/CRC/functions/functions.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PORTAL/CRC/workshop.php" afterPath="$PROJECT_DIR$/src/PORTAL/CRC/workshop.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PORTAL/functions/functions.php" afterPath="$PROJECT_DIR$/src/PORTAL/functions/functions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PORTAL/CRC/workshopusers.php" afterPath="$PROJECT_DIR$/src/PORTAL/CRC/workshopusers.php" />
     </list>
     <ignored path="organizer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,153 +23,38 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DatabaseView">
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_TABLE_DETAILS" value="true" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="organizer" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="event.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/event.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1422">
-              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workshop.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/workshop.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1872">
-              <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PORTAL/Controlz/users.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1332">
-              <caret line="74" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/users.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1998">
-              <caret line="111" column="18" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="usersevent.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PORTAL/Controlz/usersevent.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="33" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="usersevent.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/usersevent.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logout.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/logout.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workshopcall.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PORTAL/Controlz/workshopcall.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-              <folding>
-                <marker date="1475497809665" expanded="true" signature="570:656" ph="SELECT * FRO... event_workshops" />
-                <marker date="1475497809665" expanded="true" signature="765:876" ph="INSERT INTO event_workshops... " />
-                <marker date="1475497809665" expanded="true" signature="919:1030" ph="INSERT INTO event_workshops... " />
-                <marker date="1475497809665" expanded="true" signature="1341:1416" ph="UPDATE event... " />
-                <marker date="1475497809665" expanded="true" signature="1907:2013" ph="SELECT * FRO... event_workshops_participants" />
-                <marker date="1475497809665" expanded="true" signature="2270:2383" ph="INSERT INTO event_workshops_participants... " />
-                <marker date="1475497809665" expanded="true" signature="2435:2518" ph="SELECT * FRO... event_workshops" />
-                <marker date="1475497809665" expanded="true" signature="2702:2806" ph="UPDATE event... " />
-                <marker date="1475497809665" expanded="true" signature="2854:2912" ph="UPDATE coupo... " />
-                <marker date="1475497809665" expanded="true" signature="2978:3064" ph="UPDATE event... " />
-                <marker date="1475497809665" expanded="true" signature="3427:3526" ph="UPDATE event... " />
-                <marker date="1475497809665" expanded="true" signature="3829:3938" ph="UPDATE event... " />
-                <marker date="1475497809665" expanded="true" signature="4274:4385" ph="UPDATE event... " />
-                <marker date="1475497809665" expanded="true" signature="4641:4708" ph="SELECT * FRO... couponusers" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file leaf-file-name="functions.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PORTAL/functions/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="767">
-              <caret line="67" column="20" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
+            <state relative-caret-position="396">
+              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
               <folding>
-                <marker date="1475501339797" expanded="true" signature="194:247" ph="SELECT * FRO... event_details" />
-                <marker date="1475501339797" expanded="true" signature="562:838" ph="..." />
-                <marker date="1475501339797" expanded="true" signature="1095:1162" ph="SELECT * FRO... event_workshops" />
-                <marker date="1475501339797" expanded="true" signature="1414:1795" ph="..." />
-                <marker date="1475501339797" expanded="true" signature="2058:2125" ph="SELECT * FRO... event_workshops" />
-                <marker date="1475501339797" expanded="true" signature="2362:2667" ph="..." />
-                <marker date="1475501339797" expanded="true" signature="2836:2862" ph="SELECT * FRO... pearl_events" />
-                <marker date="1475501339797" expanded="true" signature="2996:3088" ph="..." />
-                <marker date="1475501339797" expanded="true" signature="3268:3339" ph="SELECT * FRO... event_workshops" />
-                <marker date="1475501339797" expanded="true" signature="3380:3440" ph="..." />
-                <marker date="1475501339797" expanded="true" signature="3803:4152" ph="SELECT useri... event_workshops_participants" />
-                <marker date="1475501339797" expanded="true" signature="4193:4253" ph="..." />
-                <marker date="1475501339797" expanded="true" signature="4612:4860" ph="..." />
-                <marker date="1475501339797" expanded="true" signature="5123:5173" ph="SELECT * FRO... pearl_events" />
-                <marker date="1475501339797" expanded="true" signature="5214:5329" ph="..." />
-                <marker date="1475501339797" expanded="true" signature="5679:5799" ph="SELECT * FRO... users" />
-                <marker date="1475501339797" expanded="true" signature="6002:6142" ph="..." />
-                <marker date="1475501339797" expanded="true" signature="6284:6422" ph="SELECT * FRO... users" />
-                <marker date="1475501339797" expanded="true" signature="6625:6765" ph="..." />
-                <marker date="1475501339797" expanded="true" signature="6882:7056" ph="Select Pearl... accomodation" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addevent.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/PORTAL/Controlz/addevent.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
-              <folding>
-                <marker date="1475500553113" expanded="true" signature="3745:3900" ph="INSERT INTO event_details... " />
+                <marker date="1475619858162" expanded="true" signature="194:208" ph="SELECT * FRO... event_details" />
+                <marker date="1475619858162" expanded="true" signature="194:220" ph="SELECT * FRO... atmos_events" />
+                <marker date="1475619858162" expanded="true" signature="531:810" ph="..." />
+                <marker date="1475619858162" expanded="true" signature="1067:1115" ph="SELECT * FRO... event_workshops" />
+                <marker date="1475619858162" expanded="true" signature="1397:1792" ph="..." />
+                <marker date="1475619858162" expanded="true" signature="2055:2122" ph="SELECT * FRO... event_workshops" />
+                <marker date="1475619858162" expanded="true" signature="2359:2664" ph="..." />
+                <marker date="1475619858162" expanded="true" signature="2833:2859" ph="SELECT * FRO... atmos_events" />
+                <marker date="1475619858162" expanded="true" signature="2993:3085" ph="..." />
+                <marker date="1475619858162" expanded="true" signature="3265:3336" ph="SELECT * FRO... event_workshops" />
+                <marker date="1475619858162" expanded="true" signature="3377:3437" ph="..." />
+                <marker date="1475619858162" expanded="true" signature="3800:4149" ph="SELECT useri... event_workshops_participants" />
+                <marker date="1475619858162" expanded="true" signature="4514:4762" ph="..." />
+                <marker date="1475619858162" expanded="true" signature="5000:5050" ph="SELECT * FRO... atmos_events" />
+                <marker date="1475619858162" expanded="true" signature="5091:5206" ph="..." />
+                <marker date="1475619858162" expanded="true" signature="5556:5676" ph="SELECT * FRO... users" />
+                <marker date="1475619858162" expanded="true" signature="5879:6019" ph="..." />
+                <marker date="1475619858162" expanded="true" signature="6161:6299" ph="SELECT * FRO... users" />
+                <marker date="1475619858162" expanded="true" signature="6502:6642" ph="..." />
+                <marker date="1475619858162" expanded="true" signature="6759:6933" ph="Select Pearl... accomodation" />
               </folding>
             </state>
           </provider>
@@ -178,11 +68,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/PORTAL/CRC/users.php" />
-        <option value="$PROJECT_DIR$/src/PORTAL/CRC/logout.php" />
-        <option value="$PROJECT_DIR$/src/PORTAL/CRC/usersevent.php" />
-        <option value="$PROJECT_DIR$/src/PORTAL/Controlz/addevent.php" />
         <option value="$PROJECT_DIR$/src/PORTAL/functions/functions.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/CRC/index.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/CRC/functions/eventusers.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/CRC/functions/workshopusers.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/CRC/csvgen.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/CRC/users.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/CRC/accomodation.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/CRC/event.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/CRC/registeredonlinedata.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/CRC/usersevent.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/CRC/workshop.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/CRC/csvgenws.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/CRC/eventusers.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/CRC/functions/functions.php" />
+        <option value="$PROJECT_DIR$/src/PORTAL/CRC/workshopusers.php" />
       </list>
     </option>
   </component>
@@ -223,6 +123,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -274,62 +175,20 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="organizer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="organizer" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PORTAL" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="functions" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="organizer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="organizer" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PORTAL" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controlz" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/PORTAL/CRC" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/PORTAL/CRC/functions" />
       <recent name="$PROJECT_DIR$/src/PORTAL/CRC" />
     </key>
   </component>
@@ -352,12 +211,6 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -386,41 +239,59 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e34cc6b0-a79a-4d4a-864a-cb22b9774309" name="Default" comment="" />
-      <created>1475301013564</created>
+      <changelist id="e1a88392-d5b0-41d7-9d62-3cc4e62ffaea" name="Default" comment="" />
+      <created>1475587097614</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1475301013564</updated>
-      <workItem from="1475301017883" duration="1948000" />
-      <workItem from="1475498689676" duration="2674000" />
+      <updated>1475587097614</updated>
+      <workItem from="1475587101522" duration="31900000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4622000" />
+    <option name="totallyTimeSpent" value="31900000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1366" height="741" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="27" width="1366" height="741" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19878604" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17147192" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17147192" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -434,11 +305,60 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/event.php">
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/Register/registeredonline.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="53" column="28" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/Register/registeredonlinedata.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="49" />
+          <folding>
+            <marker date="1474480175237" expanded="true" signature="68:88" ph="SELECT * FRO... reg_16" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/acom/backup/insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding>
+            <marker date="1475619588146" expanded="true" signature="576:628" ph="Select * fro... users" />
+            <marker date="1475619588146" expanded="true" signature="799:951" ph="insert into Accomodation... " />
+            <marker date="1475619588146" expanded="true" signature="1006:1071" ph="update rooms... " />
+            <marker date="1475619588146" expanded="true" signature="1086:1162" ph="update dosh_... " />
+            <marker date="1475619588146" expanded="true" signature="1434:1479" ph="delete from " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/acom/insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1475619588146" expanded="true" signature="440:492" ph="Select * fro... users" />
+            <marker date="1475619588146" expanded="true" signature="648:800" ph="insert into accomodation... " />
+            <marker date="1475619588146" expanded="true" signature="848:913" ph="update rooms... " />
+            <marker date="1475619588146" expanded="true" signature="925:1001" ph="update dosh_... " />
+            <marker date="1475619588146" expanded="true" signature="1240:1285" ph="delete from " />
+            <marker date="1475619588146" expanded="true" signature="1707:1747" ph="Select * fro... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/acom/sql1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -446,152 +366,190 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/workshop.php">
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1872">
-          <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PORTAL/Controlz/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="74" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1998">
-          <caret line="111" column="18" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PORTAL/Controlz/usersevent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PORTAL/Controlz/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="74" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/workshop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1872">
-          <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PORTAL/Controlz/usersevent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/event.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1422">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1998">
-          <caret line="111" column="18" selection-start-line="111" selection-start-column="13" selection-end-line="111" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/logout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PORTAL/Controlz/workshopcall.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
-          <folding>
-            <marker date="1475497809665" expanded="true" signature="570:656" ph="SELECT * FRO... event_workshops" />
-            <marker date="1475497809665" expanded="true" signature="765:876" ph="INSERT INTO event_workshops... " />
-            <marker date="1475497809665" expanded="true" signature="919:1030" ph="INSERT INTO event_workshops... " />
-            <marker date="1475497809665" expanded="true" signature="1341:1416" ph="UPDATE event... " />
-            <marker date="1475497809665" expanded="true" signature="1907:2013" ph="SELECT * FRO... event_workshops_participants" />
-            <marker date="1475497809665" expanded="true" signature="2270:2383" ph="INSERT INTO event_workshops_participants... " />
-            <marker date="1475497809665" expanded="true" signature="2435:2518" ph="SELECT * FRO... event_workshops" />
-            <marker date="1475497809665" expanded="true" signature="2702:2806" ph="UPDATE event... " />
-            <marker date="1475497809665" expanded="true" signature="2854:2912" ph="UPDATE coupo... " />
-            <marker date="1475497809665" expanded="true" signature="2978:3064" ph="UPDATE event... " />
-            <marker date="1475497809665" expanded="true" signature="3427:3526" ph="UPDATE event... " />
-            <marker date="1475497809665" expanded="true" signature="3829:3938" ph="UPDATE event... " />
-            <marker date="1475497809665" expanded="true" signature="4274:4385" ph="UPDATE event... " />
-            <marker date="1475497809665" expanded="true" signature="4641:4708" ph="SELECT * FRO... couponusers" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/usersevent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="88" column="25" selection-start-line="88" selection-start-column="25" selection-end-line="88" selection-end-column="25" />
+        <state relative-caret-position="-245">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PORTAL/Controlz/addevent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="110" column="19" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
+        <state relative-caret-position="1091">
+          <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
           <folding>
-            <marker date="1475500553113" expanded="true" signature="3745:3900" ph="INSERT INTO event_details... " />
+            <marker date="1475500291117" expanded="true" signature="3745:3900" ph="INSERT INTO event_details... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_6.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="669" column="9" selection-start-line="669" selection-start-column="9" selection-end-line="669" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1475497828397" expanded="true" signature="2078:2155" ph="SELECT * FRO... crc_credentials" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/registeredonlinedata.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="41" column="69" selection-start-line="41" selection-start-column="69" selection-end-line="41" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/usersevent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="82" column="41" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/accomodation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
+          <folding>
+            <marker date="1475622179470" expanded="true" signature="2182:2204" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/workshopusers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
+          <folding>
+            <marker date="1475624628459" expanded="true" signature="315:371" ph="SELECT name event_workshops" />
+            <marker date="1475624628459" expanded="true" signature="2599:2621" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/workshop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="56" column="27" selection-start-line="56" selection-start-column="27" selection-end-line="56" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/functions/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="42" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+          <folding>
+            <marker date="1475624523963" expanded="true" signature="188:241" ph="SELECT * FRO... event_details" />
+            <marker date="1475624523963" expanded="true" signature="558:885" ph="..." />
+            <marker date="1475624523963" expanded="true" signature="1055:1122" ph="SELECT * FRO... event_workshops" />
+            <marker date="1475624523963" expanded="true" signature="1361:1754" ph="..." />
+            <marker date="1475624523963" expanded="true" signature="1931:1998" ph="SELECT * FRO... event_workshops" />
+            <marker date="1475624523963" expanded="true" signature="2909:2935" ph="SELECT * FRO... pearl_events" />
+            <marker date="1475624523963" expanded="true" signature="3069:3161" ph="..." />
+            <marker date="1475624523963" expanded="true" signature="3338:3409" ph="SELECT * FRO... event_workshops" />
+            <marker date="1475624523963" expanded="true" signature="3450:3510" ph="..." />
+            <marker date="1475624523963" expanded="true" signature="3870:4219" ph="SELECT useri... event_workshops_participants" />
+            <marker date="1475624523963" expanded="true" signature="4260:4320" ph="..." />
+            <marker date="1475624523963" expanded="true" signature="4679:4927" ph="..." />
+            <marker date="1475624523963" expanded="true" signature="5187:5237" ph="SELECT * FRO... pearl_events" />
+            <marker date="1475624523963" expanded="true" signature="5278:5393" ph="..." />
+            <marker date="1475624523963" expanded="true" signature="5740:5860" ph="SELECT * FRO... users" />
+            <marker date="1475624523963" expanded="true" signature="6063:6203" ph="..." />
+            <marker date="1475624523963" expanded="true" signature="6342:6480" ph="SELECT * FRO... users" />
+            <marker date="1475624523963" expanded="true" signature="6683:6823" ph="..." />
+            <marker date="1475624523963" expanded="true" signature="6937:7111" ph="Select Pearl... accomodation" />
+            <marker date="1475624523963" expanded="true" signature="7562:7581" ph="SELECT * FRO... users" />
+            <marker date="1475624523963" expanded="true" signature="8158:8184" ph="SELECT * FRO... accomodation" />
+            <marker date="1475624523963" expanded="true" signature="8871:8919" ph="SELECT * FRO... event_participants" />
+            <marker date="1475624523963" expanded="true" signature="9445:9502" ph="SELECT * FRO... event_workshops_participants" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/csvgenws.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="77" column="10" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
+          <folding>
+            <marker date="1475624070487" expanded="true" signature="314:370" ph="SELECT name event_workshops" />
+            <marker date="1475624070487" expanded="true" signature="772:855" ph="SELECT useri... event_workshops_participants" />
+            <marker date="1475624070487" expanded="true" signature="1400:1462" ph="SELECT event... pearl_events" />
+            <marker date="1475624070487" expanded="true" signature="1861:1909" ph="SELECT * FRO... event_participants" />
+            <marker date="1475624070487" expanded="true" signature="2543:2562" ph="SELECT * FRO... users" />
+            <marker date="1475624070487" expanded="true" signature="3254:3280" ph="SELECT * FRO... accomodation" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/eventusers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="72" column="46" selection-start-line="72" selection-start-column="46" selection-end-line="72" selection-end-column="46" />
+          <folding>
+            <marker date="1475624400655" expanded="true" signature="324:375" ph="SELECT event... pearl_events" />
+            <marker date="1475624400655" expanded="true" signature="324:376" ph="SELECT event... pearl_events" />
+            <marker date="1475624400655" expanded="true" signature="324:377" ph="SELECT event... pearl_events" />
+            <marker date="1475624400655" expanded="true" signature="324:385" ph="SELECT event... pearl_events" />
+            <marker date="1475624400655" expanded="true" signature="324:386" ph="SELECT event... pearl_events" />
+            <marker date="1475624400655" expanded="true" signature="2614:2636" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PORTAL/CRC/event.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-101">
+          <caret line="39" column="46" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/PORTAL/functions/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="767">
-          <caret line="67" column="20" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
+        <state relative-caret-position="396">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
           <folding>
-            <marker date="1475501339797" expanded="true" signature="194:247" ph="SELECT * FRO... event_details" />
-            <marker date="1475501339797" expanded="true" signature="562:838" ph="..." />
-            <marker date="1475501339797" expanded="true" signature="1095:1162" ph="SELECT * FRO... event_workshops" />
-            <marker date="1475501339797" expanded="true" signature="1414:1795" ph="..." />
-            <marker date="1475501339797" expanded="true" signature="2058:2125" ph="SELECT * FRO... event_workshops" />
-            <marker date="1475501339797" expanded="true" signature="2362:2667" ph="..." />
-            <marker date="1475501339797" expanded="true" signature="2836:2862" ph="SELECT * FRO... pearl_events" />
-            <marker date="1475501339797" expanded="true" signature="2996:3088" ph="..." />
-            <marker date="1475501339797" expanded="true" signature="3268:3339" ph="SELECT * FRO... event_workshops" />
-            <marker date="1475501339797" expanded="true" signature="3380:3440" ph="..." />
-            <marker date="1475501339797" expanded="true" signature="3803:4152" ph="SELECT useri... event_workshops_participants" />
-            <marker date="1475501339797" expanded="true" signature="4193:4253" ph="..." />
-            <marker date="1475501339797" expanded="true" signature="4612:4860" ph="..." />
-            <marker date="1475501339797" expanded="true" signature="5123:5173" ph="SELECT * FRO... pearl_events" />
-            <marker date="1475501339797" expanded="true" signature="5214:5329" ph="..." />
-            <marker date="1475501339797" expanded="true" signature="5679:5799" ph="SELECT * FRO... users" />
-            <marker date="1475501339797" expanded="true" signature="6002:6142" ph="..." />
-            <marker date="1475501339797" expanded="true" signature="6284:6422" ph="SELECT * FRO... users" />
-            <marker date="1475501339797" expanded="true" signature="6625:6765" ph="..." />
-            <marker date="1475501339797" expanded="true" signature="6882:7056" ph="Select Pearl... accomodation" />
+            <marker date="1475619858162" expanded="true" signature="194:208" ph="SELECT * FRO... event_details" />
+            <marker date="1475619858162" expanded="true" signature="194:220" ph="SELECT * FRO... atmos_events" />
+            <marker date="1475619858162" expanded="true" signature="531:810" ph="..." />
+            <marker date="1475619858162" expanded="true" signature="1067:1115" ph="SELECT * FRO... event_workshops" />
+            <marker date="1475619858162" expanded="true" signature="1397:1792" ph="..." />
+            <marker date="1475619858162" expanded="true" signature="2055:2122" ph="SELECT * FRO... event_workshops" />
+            <marker date="1475619858162" expanded="true" signature="2359:2664" ph="..." />
+            <marker date="1475619858162" expanded="true" signature="2833:2859" ph="SELECT * FRO... atmos_events" />
+            <marker date="1475619858162" expanded="true" signature="2993:3085" ph="..." />
+            <marker date="1475619858162" expanded="true" signature="3265:3336" ph="SELECT * FRO... event_workshops" />
+            <marker date="1475619858162" expanded="true" signature="3377:3437" ph="..." />
+            <marker date="1475619858162" expanded="true" signature="3800:4149" ph="SELECT useri... event_workshops_participants" />
+            <marker date="1475619858162" expanded="true" signature="4514:4762" ph="..." />
+            <marker date="1475619858162" expanded="true" signature="5000:5050" ph="SELECT * FRO... atmos_events" />
+            <marker date="1475619858162" expanded="true" signature="5091:5206" ph="..." />
+            <marker date="1475619858162" expanded="true" signature="5556:5676" ph="SELECT * FRO... users" />
+            <marker date="1475619858162" expanded="true" signature="5879:6019" ph="..." />
+            <marker date="1475619858162" expanded="true" signature="6161:6299" ph="SELECT * FRO... users" />
+            <marker date="1475619858162" expanded="true" signature="6502:6642" ph="..." />
+            <marker date="1475619858162" expanded="true" signature="6759:6933" ph="Select Pearl... accomodation" />
           </folding>
         </state>
       </provider>

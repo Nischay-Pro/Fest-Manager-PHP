@@ -70,7 +70,7 @@ $event_name = $result['event_name'];
 </nav>
 <div class="space"></div>
 <?php
-echo "<div id='event_name'>$event_name</div><br>";
+echo "<div id='event_name'>Participation list : $event_name</div><br>";
 ?>
 <form action="csvgenws.php" method="get">
     <input type="hidden" name="event_id" value="<?php echo $event_id; ?>" />

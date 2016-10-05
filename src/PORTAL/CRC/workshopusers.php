@@ -70,7 +70,7 @@ $workshop_name = $result['name'];
 </nav>
 <div class="space"></div>
 <?php
-echo "<div id='event_name'>Partcipants list:$workshop_name</div>";
+echo "<div id='event_name'>Participation list : $workshop_name</div>";
 ?>
 <form action="csvgenws.php" method="get">
     <input type="hidden" name="id" value="<?php echo $workshop_id; ?>" />
