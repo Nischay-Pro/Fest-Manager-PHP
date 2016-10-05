@@ -2,7 +2,7 @@
 session_start();
 $con=mysqli_connect("localhost","root","060848","pearl_16");
 function getevents(){
-	$con=mysqli_connect("localhost","root","060848","pearl_16");
+$con=mysqli_connect("localhost","root","060848","pearl_16");
 $query=mysqli_query($con,"SELECT * FROM atmos_events");
 $i=1;
 while($result=mysqli_fetch_array($query)){
@@ -111,6 +111,19 @@ $i=1;
   }
  echo '</select></div>';
 }
+function getEventDropdown(){
+  $con=mysqli_connect("localhost","root","060848","pearl_16");
+$query=mysqli_query($con,"SELECT * FROM atmos_events ORDER BY event_name ASC");
+$i=1;
+  echo '<div class="form-group">
+  <select class="form-control" id="sel1" name="Event_id" onChange="updateData(this)">';
+  while($result=mysqli_fetch_array($query)){
+    $name=$result['event_name'];
+    $event_id=$result['event_id'];
+    echo '<option class="event-objects" id="'.$event_id.'" value="'.$event_id.'">'.$name.'</option>';
+  }
+ echo '</select></div>';
+}
 function getUsers(){
 	$con=mysqli_connect("localhost","root","060848","pearl_16");
     $club = $_SESSION['controlz_id'];
@@ -139,20 +152,6 @@ while($result=mysqli_fetch_array($query)){
 				$i++;
 		
 	}
-}
-function getEventDropdown(){
-	$con=mysqli_connect("localhost","root","060848","pearl_16");
-$query=mysqli_query($con,"SELECT * FROM atmos_events ORDER BY event_name ASC");
-$i=1;
-  echo '<div class="form-group">
-  <input type="text" list="eventlist" class="form-control" id="sel1" name="Event_id"/>
-  <datalist id="eventlist">';
-  while($result=mysqli_fetch_array($query)){
-    $name=$result['event_name'];
-    $event_id=$result['event_id'];
-    echo '<option id="'.$event_id.'" value="'.$event_id.'">'.$name.'</option>';
-  }
- echo '</datalist></div>';
 }
 function getIndiParticipants(){
 	$con=mysqli_connect("localhost","root","060848","pearl_16");

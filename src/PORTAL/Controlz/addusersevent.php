@@ -42,16 +42,32 @@ else{
               <input type="hidden" name="action" value="registerUser">
               <input type="hidden" name="iscoupon" id="coupon-hidden" value="0">
                   <div class="form-group">
-                    <label  class="col-sm-2 control-label"
+                    <label  class="col-sm-4 control-label"
                               for="sel1">Event Name</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-8">
                         <?php getEventDropdown(); ?>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 control-label"
+                    <label  class="col-sm-9 control-label"
+                              for="sel1">Bitsian Vacancies Available</label>
+                    <div class="col-sm-3">
+                      <input type="text" class="form-control" name="event-cost"
+                            id="bitsian-holder" disabled placeholder=""/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label  class="col-sm-9 control-label"
+                              for="sel1">Outsider Vacancies Available</label>
+                    <div class="col-sm-3">
+                      <input type="text" class="form-control" name="event-cost"
+                            id="outsider-holder" disabled placeholder=""/>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label"
                           for="Roundname" >Participant ID</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-8">
                         <input type="text" class="form-control"
                             id="part-id" name="userid" placeholder="Enter Participant ID"/>
                     </div>
@@ -63,7 +79,10 @@ else{
       </form>
       </div>
 <script type="text/javascript">
+
+var currentevent = {};
 $(document).ready(function(){
+  updateData(document.getElementById('sel1'));
   $('#datetimepicker').click(function(){
     $(this).datetimepicker({
       lang:'en',
@@ -74,6 +93,26 @@ $(document).ready(function(){
     });
   });
 });
+
+function updateData(select){
+  var eventobject = select.options[select.selectedIndex];
+  var eventid = eventobject.value;
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var dat = JSON.parse(this.responseText);
+      //var dat = this.responseText;
+      dat = dat[0];
+      console.log(dat);
+      currentevent = dat;
+      document.getElementById('bitsian-holder').value = currentevent.max_count_bits - currentevent.current_count_bits;
+      document.getElementById('outsider-holder').value = currentevent.max_count_general - currentevent.current_count_general;
+    }
+  };
+  request.open("GET", "eventcall.php?action=getDataEvent&id="+eventid, true);
+  request.send();
+}
+
 
 </script>
 <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
