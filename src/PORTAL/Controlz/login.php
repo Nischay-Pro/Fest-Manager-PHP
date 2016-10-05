@@ -8,6 +8,9 @@ include("../functions/functions.php");
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
     <script src="../js/jquery-1.11.3.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="../../css/toastr.min.css">
+    <script type="text/javascript" src="../../js/toastr.min.js"></script>
+            <script type="text/javascript" src="../../js/toastr-options.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
     <!--<link href='css/component.css' rel='stylesheet' type='text/css'>-->
    

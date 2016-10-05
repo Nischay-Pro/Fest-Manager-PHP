@@ -17,6 +17,9 @@ else{
 <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
 <link type="text/css" rel="stylesheet" href="../bootstrap-3.2.0-dist/css/bootstrap.css">
 <link type="text/css" rel="stylesheet" href="../../css/sweetalert.css">
+        <link type="text/css" rel="stylesheet" href="../../css/toastr.min.css">
+    <script type="text/javascript" src="../../js/toastr.min.js"></script>
+            <script type="text/javascript" src="../../js/toastr-options.js"></script>
 <script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="../../js/sweetalert.min.js"></script>
 <script type="text/javascript" src="../bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
