@@ -108,7 +108,7 @@ function register(){
             }
           }
         };
-        request.open("GET", "master.php/?action=masterpassword&password="+inputValue, true);
+        request.open("GET", "master.php?action=masterpassword&password="+inputValue, true);
         request.send();
       });
     }

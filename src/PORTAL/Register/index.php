@@ -1,6 +1,7 @@
 <?php
 session_start();
-include("../functions/functions.php");
+include("functions/functions.php");
+$con=mysqli_connect("localhost","root","060848","pearl_16");
 if(!isset($_SESSION['team_id'])){
 echo "<script>window.open('login.php','_self')</script>";
 }
@@ -32,10 +33,11 @@ $result=mysqli_fetch_array($team_collection);
   <body>
     <nav>
       <ul class="navigbar">
-        <li><a href="#">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="../acom/index.php">Accomodation</a></li>
         <li><a href="#">Contact</a></li>
         <li><a href="abcd.php" target="_blank">Generate Excel</a></li>
+        <li><a href="view.php">View Registered Users</a></li>
         <ul style="float:right">
           <li><a href="#">Team Collection:&nbsp;&nbsp;<?php echo $result['reg_collect']; ?></a></li>
           <li><a href="logout.php">Log Out</a></li>

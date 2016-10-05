@@ -1,3 +1,3 @@
 <?php
-$con=mysqli_connect('localhost','atmos','atmos@2016','atmos');
+$con=mysqli_connect("localhost","root","060848","pearl_16");
 ?>
