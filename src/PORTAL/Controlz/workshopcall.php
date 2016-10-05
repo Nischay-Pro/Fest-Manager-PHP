@@ -43,7 +43,7 @@ elseif($_GET['action']=='registerUser'){
 $userid = strtolower(mysqli_real_escape_string($con,$_GET['userid'])) . 'h';
 $eventid = mysqli_real_escape_string($con,$_GET['workshopid']);
 $iscoupon = mysqli_real_escape_string($con,$_GET['iscoupon']);
-$cost = mysqli_real_escape_string($con,$_GET['event-cost']);
+$tcost = mysqli_real_escape_string($con,$_GET['event-cost']);
 $outsider = mysqli_real_escape_string($con,$_GET['outsider']);
 $club = $_SESSION['controlz_id'];
 $check_user=mysqli_query($con,"SELECT * FROM event_workshops_participants WHERE eventid='$eventid' AND is_delete='0' AND userid='$userid'");
@@ -61,13 +61,13 @@ $run=mysqli_query($con,"INSERT INTO event_workshops_participants(`userid`,`event
       //  $cost = $row['cost'];
     //}
       if($iscoupon=='1'){
-      $sql = "UPDATE event_credentials SET collection=collection+$cost[4],coupons=coupons+1 WHERE organiser_id='$club'";
+      $sql = "UPDATE event_credentials SET collection=collection+$tcost,coupons=coupons+1 WHERE organiser_id='$club'";
           $con->query($sql);
         $sql = "UPDATE couponusers SET couponused=1 WHERE bitsid='$userid'";
           $con->query($sql);
       }
       else{
-      $sql = "UPDATE event_credentials SET collection=collection+$cost[4] WHERE organiser_id='$club'";
+      $sql = "UPDATE event_credentials SET collection=collection+$tcost WHERE organiser_id='$club'";
         $con->query($sql);
       }
     //echo '{"message" : "success"}';

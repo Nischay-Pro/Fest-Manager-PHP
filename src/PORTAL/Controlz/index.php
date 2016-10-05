@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include("../functions/functions.php");
+include("functions/functions.php");
 if(!isset($_SESSION['controlz_id'])){
   echo "<script>window.open('login.php','_self')</script>";
 }
@@ -64,7 +64,6 @@ $(document).ready(function(){
 
   <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
- </ul>
 </nav>
 <div class="space"></div>
 <div class="container"><br>
@@ -76,9 +75,9 @@ $(document).ready(function(){
       <tr>
       <th>Sr No</th>
         <th>Event Name</th>
-        <th>Event Round</th>
-        <th>Event Date</th>
-        <th>Event Venue</th>
+        <th>Event Time</th>
+        <th>Event Room</th>
+        <th>Event Cost</th>
       </tr>
     </thead>
      <tbody>

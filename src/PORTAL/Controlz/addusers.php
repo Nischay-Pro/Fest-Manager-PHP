@@ -42,16 +42,16 @@ else{
               <input type="hidden" name="outsider" id="outsider">
               <input type="hidden" name="iscoupon" id="coupon-hidden" value="0">
                   <div class="form-group">
-                    <label  class="col-sm-2 control-label"
+                    <label  class="col-sm-4 control-label"
                               for="sel1">Workshop Name</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-8">
                         <?php getWorkshopDropdown(); ?>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-sm-2 control-label"
+                    <label class="col-sm-4 control-label"
                           for="Roundname" >Participant ID</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-8">
                         <input type="text" class="form-control"
                             id="part-id" name="userid" placeholder="Enter Participant ID"/>
                     </div>
