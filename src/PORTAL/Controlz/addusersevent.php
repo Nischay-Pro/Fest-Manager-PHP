@@ -40,6 +40,7 @@ else{
 <div class="space"></div>
 <form class="form-horizontal" action="eventcall.php" role="form" method="GET">
               <input type="hidden" name="action" value="registerUser">
+              <input type="hidden" name="outsider" id="outsider">
               <input type="hidden" name="iscoupon" id="coupon-hidden" value="0">
                   <div class="form-group">
                     <label  class="col-sm-4 control-label"
@@ -74,7 +75,7 @@ else{
                   </div>           
       </div>
       
-        <input class="btn btn-lg btn-success col-sm-6" style="margin-left:25vw" type="submit" value="Add User" name="register" >
+        <input id="submit-button" disabled="true" class="btn btn-lg btn-success col-sm-6" style="margin-left:25vw" type="submit" value="Add User" name="register" >
       </div>
       </form>
       </div>
@@ -93,6 +94,42 @@ $(document).ready(function(){
     });
   });
 });
+
+var inputfield = document.getElementById('part-id');
+inputfield.addEventListener("keyup", function(){
+  var partid = inputfield.value;
+  var button = document.getElementById('submit-button');
+  var partidval = partid.match(/[fhFH](20)\d{5}/g);
+  var valid = false;
+  var outsider = true;
+  if (partidval != null && partid.length==8){
+    outsider = false;
+    valid = true;
+  }
+  if(partid.startsWith('ATMH')){
+    outsider = true;
+    valid = true;
+  }
+  if(partid.length == 0){
+    inputfield.style.background = "#ffffff";
+    return;
+  }
+  if(!valid){
+    inputfield.style.background = "#ffaaaa";
+    button.disabled = true;
+    return;
+  }
+  button.disabled = false;
+  document.getElementById('outsider').value=outsider?1:0;
+  if(outsider){
+    inputfield.style.background = "#aaeebb";
+    return;
+  }
+  if(!outsider){
+    inputfield.style.background = "#aaccdd";
+    return;
+  }
+}); 
 
 function updateData(select){
   var eventobject = select.options[select.selectedIndex];
