@@ -145,6 +145,80 @@ elseif($_GET['action']=='getDataWorkshop'){
     $jsonstring = json_encode($json);
  echo $jsonstring;
 }
+elseif($_GET['action']=='checkPaid'){
+    $email = mysqli_real_escape_string($con,$_GET['email']);
+    $workshopname = mysqli_real_escape_string($con,$_GET['work_name']);
+    $query=mysqli_query($con,"SELECT * FROM online_payment WHERE `email`='$email' AND `ticket_name`='$workshopname'");
+    $row=mysqli_fetch_array($query);
+    if(mysqli_num_rows($query) != 0) {
+    $json[]= array(
+        'paid' => 'true'
+    );
+    $jsonstring = json_encode($json);
+ echo $jsonstring;
+    }
+    else{
+    $json[]= array(
+        'paid' => 'false'
+    );
+        $jsonstring = json_encode($json);
+        echo $jsonstring;
+    }
+}
+elseif($_GET['action']=='checkUserReal'){
+    $user = mysqli_real_escape_string($con,$_GET['userid']);
+    $query=mysqli_query($con,"SELECT * FROM users WHERE `pearl_id`='$user'");
+    $row=mysqli_fetch_array($query);
+    if(mysqli_num_rows($query) != 0) {
+    $json[]= array(
+        'exists' => 'true'
+    );
+    $jsonstring = json_encode($json);
+ echo $jsonstring;
+    }
+    else{
+    $json[]= array(
+        'exists' => 'false'
+    );
+        $jsonstring = json_encode($json);
+        echo $jsonstring;
+    }
+}
+elseif($_GET['action']=='performPayTransfer'){
+    $userid = mysqli_real_escape_string($con,$_GET['userid']);
+    $email = mysqli_real_escape_string($con,$_GET['email']);
+    $workshopname = mysqli_real_escape_string($con,$_GET['work_name']);
+    $query=mysqli_query($con,"SELECT * FROM online_payment WHERE `email`='$email' AND `ticket_name`='$workshopname'");
+    $row=mysqli_fetch_array($query);
+    if(mysqli_num_rows($query) != 0) {
+    $ticket_name=$row['ticket_name'];
+    $query2=mysqli_query($con,"SELECT * FROM event_workshops WHERE `ticket_name`='$ticket_name'");
+    $row2=mysqli_fetch_array($query2);
+    $workshopid=$row2['id'];
+    $run=mysqli_query($con,"INSERT INTO event_workshops_participants(`userid`,`eventid`,`is_coupon`) VALUES('$userid','$workshopid','0')");
+    if($run){
+        $json[]= array(
+        'status' => 'true'
+    );
+        $jsonstring = json_encode($json);
+        echo $jsonstring;
+    }
+    else{
+           $json[]= array(
+        'status' => 'false'
+    );
+        $jsonstring = json_encode($json);
+        echo $jsonstring; 
+    }
+    }
+    else{
+           $json[]= array(
+        'status' => 'false'
+    );
+        $jsonstring = json_encode($json);
+        echo $jsonstring; 
+    }
+}
 else{
 	echo "Direct Access is denied";
 }

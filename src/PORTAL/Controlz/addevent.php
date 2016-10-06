@@ -34,7 +34,6 @@ else{
   <li><a href="sendnotif.php">Send Notification</a></li>
   <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
- </ul>
 </nav>
 <div class="container" style="width:50%">
 <div class="space"></div>

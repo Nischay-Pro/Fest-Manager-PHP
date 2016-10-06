@@ -6,11 +6,14 @@ $con=mysqli_connect("localhost","root","060848","pearl_16");
 if($_GET['action']=='registerEvent'){
 $name = mysqli_real_escape_string($con,$_GET['name']);
 $room = mysqli_real_escape_string($con,$_GET['room']);
+$groupid = mysqli_real_escape_string($con,$_GET['groupid']);
+$isgroup = mysqli_real_escape_string($con,$_GET['isgroup']);    
 $time = mysqli_real_escape_string($con,$_GET['time']);
 $time = str_replace('/','-',$time);
 $time = $time . ':00';
 $cost = mysqli_real_escape_string($con,$_GET['cost']);
 $club = $_SESSION['controlz_id'];
+    if($isgroup=='0') {
 $check_user=mysqli_query($con,"SELECT * FROM event_workshops WHERE `name`='$name' AND `club`='$club' AND isdelete='0'");
 $rows=mysqli_num_rows($check_user);
 if($rows>0){
@@ -28,6 +31,7 @@ $run=mysqli_query($con,"INSERT INTO event_workshops(`name`,`room`,`time`,`cost`,
     echo '{"message" : "failure"}';
   }
 }
+}
 elseif($_GET['action']=='deleteEvent'){
 $name = mysqli_real_escape_string($con,$_GET['name']);
 $club = $_SESSION['controlz_id'];
@@ -44,6 +48,8 @@ $userid = strtolower(mysqli_real_escape_string($con,$_GET['userid']));
 $eventid = mysqli_real_escape_string($con,$_GET['Event_id']);
 $iscoupon = mysqli_real_escape_string($con,$_GET['iscoupon']);
 $outsider = mysqli_real_escape_string($con,$_GET['outsider']);
+$groupid = mysqli_real_escape_string($con,$_GET['groupid']);
+$isgroup = mysqli_real_escape_string($con,$_GET['isgroup']);    
 $club = $_SESSION['controlz_id'];
 $check_user=mysqli_query($con,"SELECT * FROM event_participants WHERE event_id='$eventid' AND isdelete='0' AND pearl_id='$userid'");
 $rows=mysqli_num_rows($check_user);

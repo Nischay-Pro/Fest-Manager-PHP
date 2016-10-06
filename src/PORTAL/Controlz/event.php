@@ -84,7 +84,7 @@ function editMe(row){
 <nav>
  <ul class="navigbar">
       <li><a href="index.php">Controlz Panel</a></li>
-  <li><a href="addusersevent.php">Add Users</a></li>
+  <li><a href="addevent.php">Add Event</a></li>
   <li><a href="usersevent.php">See Registered Users</a></li>
   <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>

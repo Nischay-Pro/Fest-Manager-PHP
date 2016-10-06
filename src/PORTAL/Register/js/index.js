@@ -156,16 +156,10 @@ function checkOnline(){
           return false;
         }
         if(res.status==200){
-          data.fest_id.value=inputValue;
           data.college.value=res.college;
           data.name.value=res.name;
           data.email.value=res.email;
           data.phone.value=res.phone;
-          data.fest_id.disabled=true;
-          data.college.disabled=true;
-          data.name.disabled=true;
-          data.email.disabled=true;
-          data.phone.disabled=true;
           swal("ATMOS ID Found.", "User Details Have Been Filled.", "success");
         }
       }

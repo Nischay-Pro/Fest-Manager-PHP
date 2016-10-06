@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("sms.php");
 $team_id=$_SESSION['team_id'];
     include("functions/functions.php");
     $fest_id=mysqli_real_escape_string($con,$_GET['fest_id']);
@@ -31,10 +32,12 @@ else{
             if($reg!=1){
                $team_reg_collect_query=mysqli_query($con,"UPDATE dosh_credentials SET reg_collect=reg_collect+250 WHERE team_id='$team_id'");
                $response=array();
+                sendSMS('91' . $phone,'You have successfully registered. Please pay 250 rupees.');
                echo '{"title":"User Registration Successful","message": "User has been registered successfully. Please collect Rs 250.","type": "success","status": "200"}';
             }
             else{
               $response=array();
+                    sendSMS('91' . $phone,'You have successfully registered.');
                echo '{"title":"User Registration Successful","message": "User has been registered successfully. Do not collect Rs 250.","type": "success","status": "200"}';
      
             }

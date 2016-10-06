@@ -36,8 +36,6 @@ else{
   <li><a href="users.php">See Registered Users</a></li>
   <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
- </ul>
-</nav>
 <div class="container" style="width:50%">
 <div class="space"></div>
 <form class="form-horizontal" action="workshopcall.php" role="form" method="GET">
@@ -90,6 +88,9 @@ else{
                             id="coupon" disabled placeholder="Coupon Not Applied (default)."/>
                     </div>
                   </div>
+                <div class="form-group">
+                    <input id="coupon-button" class="col-sm-12 btn btn-lg btn-success" onclick="startTransfer()" value="Check Workshop Paid Online">
+                  </div>
                                    
       </div>
       
@@ -131,7 +132,9 @@ function updateData(select){
   request.open("GET", "workshopcall.php?action=getDataWorkshop&id="+workshopid, true);
   request.send();
 }
-
+function startTransfer(){
+    
+}
 function checkCoupon(){
   var user = document.getElementById('part-id').value;
   var costholder = document.getElementById('cost-holder');
@@ -143,7 +146,7 @@ function checkCoupon(){
         if(dat.message){
           swal({
             title: 'Add Coupon?',
-            text: 'Only one coupon, mofo. Use wisely.',
+            text: 'You can apply only one coupon.',
             type: 'info',
             showCancelButton: true,
             closeOnConfirm: true,
@@ -173,7 +176,7 @@ function checkCoupon(){
     request.send();
   }
   else {
-    document.getElementById('coupon').value="Coupon Not Applied. Workshop is Cheaper than 150.";
+    document.getElementById('coupon').value="Coupon cannot be applied.";
     document.getElementById('coupon-hidden').value=0;
   }
   
@@ -187,10 +190,12 @@ inputfield.addEventListener("keyup", function(){
   var valid = false;
   var outsider = true;
   if (partidval != null && partid.length==8){
+    document.getElementById('coupon-button').disabled = false;
     outsider = false;
     valid = true;
   }
   if(partid.startsWith('ATMH')){
+    document.getElementById('coupon-button').disabled = true;
     outsider = true;
     valid = true;
   }
