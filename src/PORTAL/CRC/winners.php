@@ -70,12 +70,12 @@ $event_name = $result['event_name'];
 </nav>
 <div class="space"></div>
 <?php
-echo "<div id='event_name'>Participation list : $event_name</div><br>";
+echo "<div id='event_name'>Winners list : $event_name</div><br>";
 ?>
-<form action="csvgenws.php" method="get">
-    <input type="hidden" name="event_id" value="<?php echo $event_id; ?>" />
-    <input id="gencsv_butt"  type="submit" value="Generate CSV" />
-</form>
+<!--<form action="csvgenws.php" method="get">-->
+<!--    <input type="hidden" name="event_id" value="--><?php //echo $event_id; ?><!--" />-->
+<!--    <input id="gencsv_butt"  type="submit" value="Generate CSV" />-->
+<!--</form>-->
 <div class="container"><br>
 
     <div id="status"></div>
@@ -93,7 +93,7 @@ echo "<div id='event_name'>Participation list : $event_name</div><br>";
             </thead>
             <tbody>
             <?php
-                getEventParticipants($event_id);
+            getEventWinners($event_id);
             ?>
             </tbody>
         </table>

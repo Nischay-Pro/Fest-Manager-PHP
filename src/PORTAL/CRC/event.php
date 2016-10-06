@@ -38,6 +38,9 @@ else{
 <nav>
  <ul class="navigbar">
     <li><a href="index.php">CRC PANEL</a></li>
+     <li><a href="workshop.php">Workshops</a></li>
+     <li><a href="registeredonlinedata.php">Registered Users</a></li>
+     <li><a href="accomodation.php">Accomodation</a></li>
     <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
 </nav>
@@ -51,9 +54,10 @@ else{
       <tr>
       <th>Sr No</th>
         <th>Event Name</th>
+        <th>Round</th>
         <th>Event Time</th>
         <th>Event Room</th>
-        <th>Event Cost</th>
+          <th>Winners</th>
       </tr>
     </thead>
      <tbody>

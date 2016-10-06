@@ -38,6 +38,7 @@ else{
      <li><a href="workshop.php">Workshops</a></li>
      <li><a href="registeredonlinedata.php">Registered Users</a></li>
      <li><a href="accomodation.php">Accomodation</a></li>
+     <li><a href="winners.php">Winners</a></li>
      <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
  </ul>
@@ -55,6 +56,7 @@ else{
         <th>Event Round</th>
         <th>Event Date</th>
         <th>Event Venue</th>
+          <th>Winners</th>
       </tr>
     </thead>
      <tbody>
