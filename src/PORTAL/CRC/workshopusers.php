@@ -86,6 +86,7 @@ echo "<div id='event_name'>Participation list : $workshop_name</div>";
             <tr>
                 <th>Sr No</th>
                 <th>Atmos_id</th>
+                <th>Name</th>
                 <th>Registered At</th>
                 <th>Coupon Applied?</th>
             </tr>

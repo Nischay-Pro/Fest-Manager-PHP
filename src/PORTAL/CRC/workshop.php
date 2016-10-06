@@ -38,6 +38,9 @@ else{
 <nav>
  <ul class="navigbar">
       <li><a href="index.php">CRC PANEL</a></li>
+     <li><a href="event.php">Events</a></li>
+     <li><a href="registeredonlinedata.php">Registered Users</a></li>
+     <li><a href="accomodation.php">Accomodation</a></li>
     <li style="float:right"><a href="logout.php">Log Out</a></li>
   </ul>
  </ul>
