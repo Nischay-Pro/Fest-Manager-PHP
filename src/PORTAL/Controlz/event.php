@@ -103,6 +103,7 @@ function editMe(row){
         <th>Event Time</th>
         <th>Event Room</th>
         <th>Event Cost</th>
+            <th>Winners</th>
       </tr>
     </thead>
      <tbody>
