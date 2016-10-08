@@ -2,7 +2,8 @@
 session_start();
 include("../functions/functions.php");
 //echo "<script>window.open('workshop.php','_self')</script>";
-//$con=mysqli_connect("localhost","root","060848","pearl_16");
+//$con=mysqli_connect("localhost","organiser_admin","Organiser@admin","organiser_app");
+$con=mysqli_connect("localhost","root","060848","pearl_16");
 if($_GET['action']=='registerEvent'){
 $name = mysqli_real_escape_string($con,$_GET['name']);
 $room = mysqli_real_escape_string($con,$_GET['room']);
@@ -49,39 +50,65 @@ $club = $_SESSION['controlz_id'];
 $check_user=mysqli_query($con,"SELECT * FROM event_workshops_participants WHERE eventid='$eventid' AND is_delete='0' AND userid='$userid'");
 $rows=mysqli_num_rows($check_user);
 if($rows>0){
-    	echo '{"message" : "User Already Added"}';
+      echo "<script>window.open('addusers.php?messageid=2','_self')</script>";
 }
+
 else{
     // "INSERT INTO event_workshops_participants(`userid`,`eventid`,`is_coupon`) VALUES('$userid','$eventid','$iscoupon')";
 $run=mysqli_query($con,"INSERT INTO event_workshops_participants(`userid`,`eventid`,`is_coupon`) VALUES('$userid','$eventid','$iscoupon')");
   if($run){
       $loadevent=mysqli_query($con,"SELECT * FROM event_workshops WHERE isdelete='0' AND id='$eventid'");
-      $cost = mysqli_fetch_array($loadevent);
+      $row = mysqli_fetch_array($loadevent);
       //while ($row = mysqli_fetch_row($loadevent)) {
-      //  $cost = $row['cost'];
+      $cost_bits = $row['cost_bits'];
+      $cost_general = $row['cost_general'];
+      if($row['max_count_general']==$row['current_count_general'] && $outsider=='1'){
+      echo "<script>window.open('addusers.php?messageid=3','_self')</script>";
+          exit;
+      }
+      elseif($row['max_count_bits']==$row['current_count_bits'] && $outsider=='0'){
+      echo "<script>window.open('addusers.php?messageid=4','_self')</script>";
+          exit;
+      }
+      
+      else{
     //}
       if($iscoupon=='1'){
-      $sql = "UPDATE event_credentials SET collection=collection+$tcost,coupons=coupons+1 WHERE organiser_id='$club'";
+          $tcost=$cost_bits-150;
+      $sql = "UPDATE controlz_credentials SET collection=collection+$tcost,couponsused=couponsused+1 WHERE controlz_id='$club'";
           $con->query($sql);
         $sql = "UPDATE couponusers SET couponused=1 WHERE bitsid='$userid'";
           $con->query($sql);
       }
       else{
-      $sql = "UPDATE event_credentials SET collection=collection+$tcost WHERE organiser_id='$club'";
+            if($outsider=='1'){
+            $tcost=$cost_general;
+                              $sql = "UPDATE controlz_credentials SET collection=collection+$tcost WHERE controlz_id='$club'";
         $con->query($sql);
+            }
+            else{
+            $tcost=$cost_bits;
+                  $sql = "UPDATE controlz_credentials SET collection=collection+$tcost WHERE controlz_id='$club'";
+        $con->query($sql);
+            }
       }
       if($outsider=='1'){
       $sql = "UPDATE event_workshops SET current_count_general=current_count_general+1 WHERE id='$eventid'";
           $con->query($sql);
+ 	$sql = "UPDATE controlz_credentials SET register_general=register_general+1 WHERE controlz_id='$club'";
+        $con->query($sql);    
       }
       else{
       $sql = "UPDATE event_workshops SET current_count_bits=current_count_bits+1 WHERE id='$eventid'";
         $con->query($sql);
+         	$sql = "UPDATE controlz_credentials SET register_bits=register_bits+1 WHERE controlz_id='$club'";
+        $con->query($sql);    
       }
     //echo '{"message" : "success"}';
-      echo "<script>window.open('addusers.php','_self')</script>";
+      echo "<script>window.open('addusers.php?messageid=0','_self')</script>";
+  }
   } else {
-    echo '{"message" : "failure"}';
+      echo "<script>window.open('addusers.php?messageid=1','_self')</script>";
 }
 }
 }

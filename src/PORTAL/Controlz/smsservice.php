@@ -3,8 +3,8 @@ function sendSMS($mobile,$message){
 //Please Enter Your Details
 $user="brilliant"; //your username
 $password="33221304"; //your password
-$mobilenumbers="+919848167747"; //enter Mobile numbers comma seperated
-$message = "Hello Universe"; //enter Your Message
+$mobilenumbers="91" . $mobile; //enter Mobile numbers comma seperated
+$message = "d/s" . $message; //enter Your Message
 $senderid="PEARLH"; //Your senderid
 $messagetype="N"; //Type Of Your Message
 $DReports="Y"; //Delivery Reports

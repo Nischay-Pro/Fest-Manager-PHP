@@ -1,4 +1,5 @@
 var currentworkshop = {};
+var last_message;
 
 $(document).ready(function(){
   updateData(document.getElementById('sel1'));
@@ -108,6 +109,29 @@ function verifyUser(){
   });
 }
 
+function addUser(){
+  var form = document.getElementById('my-fucking-form');
+  var cost = document.getElementById('cost-holder').value;
+  var str = "Cost: " + cost;
+
+  swal({
+    title: 'Register User to Workshop?',
+    text: str,
+    type: 'info',
+    showCancelButton: true,
+    closeOnConfirm: true,
+    disableButtonsOnConfirm: true,
+    confirmLoadingButtonColor: '#DD6B55'
+  }, function(isConfirm){
+    if(isConfirm){
+      form.submit();
+    }
+    else{
+      return false;
+    }
+  });
+}
+
 function checkCoupon(){
   var user = document.getElementById('part-id').value;
   var costholder = document.getElementById('cost-holder');
@@ -159,6 +183,10 @@ var inputfield = document.getElementById('part-id');
 
 inputfield.addEventListener("keyup", function(){
   var partid = inputfield.value;
+  //reset coupon
+  document.getElementById('coupon-button').disabled=false;
+  document.getElementById('coupon-hidden').value=0;
+  document.getElementById('coupon').value="Coupon Not Applied (default).";
   var button = document.getElementById('submit-button');
   var partidval = partid.match(/[fhFH](20)\d{5}/g);
   var valid = false;

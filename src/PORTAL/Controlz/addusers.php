@@ -38,7 +38,7 @@ else{
   </ul>
 <div class="container" style="width:50%">
 <div class="space"></div>
-<form class="form-horizontal" action="workshopcall.php" role="form" method="GET">
+<form class="form-horizontal" id="my-fucking-form" action="workshopcall.php" style="margin-bottom:0px;" role="form" method="GET">
               <input type="hidden" name="action" value="registerUser">
               <input type="hidden" name="outsider" id="outsider">
               <input type="hidden" name="iscoupon" id="coupon-hidden" value="0">
@@ -89,19 +89,52 @@ else{
                     </div>
                   </div>
                 <div class="form-group">
-                    <input id="coupon-button" class="col-sm-12 btn btn-lg btn-success" onclick="verifyPayment()" value="Check Workshop Paid Online">
+                    <input id="coupon-button" style="display: none" class="col-sm-12 btn btn-lg btn-success" onclick="verifyPayment()" value="Check Workshop Paid Online">
                   </div>
                                    
       </div>
-      
-        <input id="submit-button" disabled="true" class="btn btn-lg btn-success col-sm-6" style="margin-left:25vw;" type="submit" value="Add User" name="register">
+        <input id="submit-button" disabled="true" class="btn btn-lg btn-success col-sm-6" style="margin-left:25vw;"value="Add User" name="register" onclick="addUser()">
       </div>
       </form>
       </div>
 <script type="text/javascript" src="js/addusers.js"></script>
 <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
 <script src="js/jquery.datetimepicker.js"></script>
-      
+<script type="text/javascript">
+window.onload=function(e){
+  last_message = <?php echo $_GET['messageid']; ?>;
+  console.log("MessageID",last_message);
+  var messages = [];
+  var titles = [];
+  var types = [];
+
+  //0
+  titles.push("Success");
+  types.push("success");
+  messages.push("Successfully registered User to Workshop.");
+  //1
+  titles.push("Something Went Wrong.");
+  types.push("error");
+  messages.push("Serious Technical Error. Please contact DOTA.");
+  //2
+  titles.push("User Already Registered");
+  types.push("error");
+  messages.push("User has already registered for this workshop.");
+  //3
+  titles.push("No Seats Available");
+  types.push("error");
+  messages.push("No seats available for Outsiders. User cannot be registered.");
+  //4
+  titles.push("No Seats Available");
+  types.push("error");
+  messages.push("No seats available for Bitsians. User cannot be registered.");
+  if(last_message!=undefined){
+    swal(titles[last_message],messages[last_message],types[last_message]);
+  }
+}
+
+
+</script>
 <?php
 if(isset($_POST['register'])){
   $Event_date=$_POST['Event_date'];
