@@ -128,6 +128,10 @@ window.onload=function(e){
   titles.push("No Seats Available");
   types.push("error");
   messages.push("No seats available for Bitsians. User cannot be registered.");
+
+  titles[69] = "Position Already Taken";
+  types[69] = "warning";
+  messages[69] = "Position '69' already taken. Try 96 maybe.";
   if(last_message!=undefined){
     swal(titles[last_message],messages[last_message],types[last_message]);
   }
