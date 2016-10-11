@@ -6,6 +6,7 @@ data.email = document.getElementById('email');
 data.phone = document.getElementById('phone');
 data.accom = document.getElementById('accom');
 data.reg = document.getElementById('reg');
+data.button = document.getElementById('register-button');
 
 function clearData(){
   data.fest_id.value="";
@@ -20,6 +21,7 @@ function clearData(){
   data.name.removeAttribute("disabled");;
   data.email.removeAttribute("disabled");;
   data.phone.removeAttribute("disabled");;
+  data.button.disabled = false;
 }
 
 function validateData(){
@@ -53,7 +55,9 @@ function validateData(){
 }
 
 function submitForm(){
-  console.log("Me was called.");
+  data.button.disabled = true;
+  toastr.info('Please wait.', 'Registering User');
+  console.log("Submitting Form.");
   var url = "register.php/?";
   url += "fest_id="+data.fest_id.value;
   url += "&college="+data.college.value;

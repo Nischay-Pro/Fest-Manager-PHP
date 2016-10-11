@@ -97,7 +97,7 @@ $result=mysqli_fetch_array($team_collection);
       </form>
       <div class="form-group">
         <button class="btn btn-lg btn-primary col-sm-4" name="register" onclick="clearData()">Clear</button>
-        <button class="btn btn-lg btn-success col-sm-8" name="register" onclick="register()">Add Participant</button>
+        <button class="btn btn-lg btn-success col-sm-8" name="register" id="register-button" onclick="register()">Add Participant</button>
       </div>
     </div>
     <script type="text/javascript" src="js/index.js"></script>
