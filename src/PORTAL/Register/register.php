@@ -26,7 +26,7 @@ else{
       //testing   
         $check_duplicate_query=mysqli_query($con,"SELECT * FROM users WHERE email='$email'");
         $rows=mysqli_num_rows($check_duplicate_query);
-        if($rows==0){
+        if($rows>=0){
           $register_participant_query=mysqli_query($con,"INSERT INTO users(pearl_id,name,email,phone,college,reg,accom,id_reg) VALUES('$fest_id','$name','$email','$phone','$college','$reg','$accom','$team_id')");
           if($register_participant_query){
             if($reg!=1){

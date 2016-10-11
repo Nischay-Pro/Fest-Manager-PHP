@@ -55,7 +55,7 @@ $result=mysqli_fetch_array($team_collection);
           <label  class="col-sm-4 control-label"
           for="name">Participant ID</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" id="fest_id" name="fest_id" placeholder="ATMH#####"/>
+            <input type="text" class="form-control" id="fest_id" name="fest_id" placeholder="ATM####"/>
           </div>
         </div>
         <div class="form-group">

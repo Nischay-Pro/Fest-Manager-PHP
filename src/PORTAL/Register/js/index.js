@@ -29,8 +29,8 @@ function validateData(){
   formdata.college=data.college.value;
   formdata.phone=data.phone.value.match(/\d{10}/g);
   formdata.email=data.email.value.match(/.+[@].+\..+/g);
-  if(!formdata.fest_id) {
-    toastr.error('Please use alphabets and numbers.', 'Participant ID Invalid');
+  if(!formdata.fest_id.startsWith('ATM') || formdata.fest_id.length!=7) {
+    toastr.error('Please use the specified format.', 'Participant ID Invalid');
     return false;
   }
   if(!formdata.name) {
@@ -67,6 +67,9 @@ function submitForm(){
     if (this.readyState == 4 && this.status == 200) {
       var res = JSON.parse(this.responseText);
       console.log(this.responseText);
+      if(res.type == "success"){
+        clearData();
+      }
       swal(res.title, res.message, res.type);
     }
   };
