@@ -20,8 +20,8 @@ $result=mysqli_fetch_array($team_collection);
     <link type="text/css" rel="stylesheet" href="../../css/sweetalert.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <link type="text/css" rel="stylesheet" href="../../css/toastr.min.css">
-    <script type="text/javascript" src="../../js/toastr.min.js"></script>
     <script type="text/javascript" src="../../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../../js/toastr.min.js"></script>
     <script type="text/javascript" src="../../js/sweetalert.min.js"></script>
     <script type="text/javascript" src="../bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
     <style type="text/css">
